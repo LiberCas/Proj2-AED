@@ -57,3 +57,19 @@ void Stop::setLatitude(float latitude) {
 void Stop::setLongitude(float longitude) {
     Stop::longitude = longitude;
 }
+
+istream & operator>>(istream &is, Stop &stop) {
+    char temp[256];
+    is.getline(temp, 100, ',');
+    stop.setCode((string)temp);
+    is.getline(temp, 100, ',');
+    stop.setName((string)temp);
+    is.getline(temp, 100, ',');
+    stop.setZone((string)temp);
+    is.getline(temp, 100, ',');
+    stop.setLatitude(stof(temp));
+    is.getline(temp, 100, ',');
+    stop.setLongitude(stof(temp));
+    is.ignore();
+    return is;
+}
