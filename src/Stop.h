@@ -30,6 +30,7 @@ public:
     void setZone(const string &zone);
     void setLatitude(float latitude);
     void setLongitude(float longitude);
+    friend istream &operator>>(istream &is, Stop &stop);
 };
 
 
