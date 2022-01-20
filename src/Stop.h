@@ -18,6 +18,7 @@ private:
     float longitude;
 
 public:
+    Stop();
     Stop(const string &code, const string &name, const string &zone, float latitude, float longitude);
     ~Stop();
     const string &getCode() const;

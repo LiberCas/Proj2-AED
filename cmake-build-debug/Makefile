@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 3\AED\Proj2AED"
+CMAKE_SOURCE_DIR = C:\Users\35196\OneDrive\Documentos\GitHub\Proj2-AED
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 3\AED\Proj2AED\cmake-build-debug"
+CMAKE_BINARY_DIR = C:\Users\35196\OneDrive\Documentos\GitHub\Proj2-AED\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 3\AED\Proj2AED\cmake-build-debug\CMakeFiles" "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 3\AED\Proj2AED\cmake-build-debug\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\35196\OneDrive\Documentos\GitHub\Proj2-AED\cmake-build-debug\CMakeFiles C:\Users\35196\OneDrive\Documentos\GitHub\Proj2-AED\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 3\AED\Proj2AED\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\35196\OneDrive\Documentos\GitHub\Proj2-AED\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -152,6 +152,102 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/Controller.obj: src/Controller.cpp.obj
+.PHONY : src/Controller.obj
+
+# target to build an object file
+src/Controller.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Controller.cpp.obj
+.PHONY : src/Controller.cpp.obj
+
+src/Controller.i: src/Controller.cpp.i
+.PHONY : src/Controller.i
+
+# target to preprocess a source file
+src/Controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Controller.cpp.i
+.PHONY : src/Controller.cpp.i
+
+src/Controller.s: src/Controller.cpp.s
+.PHONY : src/Controller.s
+
+# target to generate assembly for a file
+src/Controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Controller.cpp.s
+.PHONY : src/Controller.cpp.s
+
+src/Line.obj: src/Line.cpp.obj
+.PHONY : src/Line.obj
+
+# target to build an object file
+src/Line.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Line.cpp.obj
+.PHONY : src/Line.cpp.obj
+
+src/Line.i: src/Line.cpp.i
+.PHONY : src/Line.i
+
+# target to preprocess a source file
+src/Line.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Line.cpp.i
+.PHONY : src/Line.cpp.i
+
+src/Line.s: src/Line.cpp.s
+.PHONY : src/Line.s
+
+# target to generate assembly for a file
+src/Line.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Line.cpp.s
+.PHONY : src/Line.cpp.s
+
+src/Menu.obj: src/Menu.cpp.obj
+.PHONY : src/Menu.obj
+
+# target to build an object file
+src/Menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Menu.cpp.obj
+.PHONY : src/Menu.cpp.obj
+
+src/Menu.i: src/Menu.cpp.i
+.PHONY : src/Menu.i
+
+# target to preprocess a source file
+src/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Menu.cpp.i
+.PHONY : src/Menu.cpp.i
+
+src/Menu.s: src/Menu.cpp.s
+.PHONY : src/Menu.s
+
+# target to generate assembly for a file
+src/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Menu.cpp.s
+.PHONY : src/Menu.cpp.s
+
+src/StartMenu.obj: src/StartMenu.cpp.obj
+.PHONY : src/StartMenu.obj
+
+# target to build an object file
+src/StartMenu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/StartMenu.cpp.obj
+.PHONY : src/StartMenu.cpp.obj
+
+src/StartMenu.i: src/StartMenu.cpp.i
+.PHONY : src/StartMenu.i
+
+# target to preprocess a source file
+src/StartMenu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/StartMenu.cpp.i
+.PHONY : src/StartMenu.cpp.i
+
+src/StartMenu.s: src/StartMenu.cpp.s
+.PHONY : src/StartMenu.s
+
+# target to generate assembly for a file
+src/StartMenu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/StartMenu.cpp.s
+.PHONY : src/StartMenu.cpp.s
+
 src/Stop.obj: src/Stop.cpp.obj
 .PHONY : src/Stop.obj
 
@@ -176,6 +272,30 @@ src/Stop.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Stop.cpp.s
 .PHONY : src/Stop.cpp.s
 
+src/System.obj: src/System.cpp.obj
+.PHONY : src/System.obj
+
+# target to build an object file
+src/System.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/System.cpp.obj
+.PHONY : src/System.cpp.obj
+
+src/System.i: src/System.cpp.i
+.PHONY : src/System.i
+
+# target to preprocess a source file
+src/System.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/System.cpp.i
+.PHONY : src/System.cpp.i
+
+src/System.s: src/System.cpp.s
+.PHONY : src/System.s
+
+# target to generate assembly for a file
+src/System.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/System.cpp.s
+.PHONY : src/System.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -188,9 +308,24 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... src/Controller.obj
+	@echo ... src/Controller.i
+	@echo ... src/Controller.s
+	@echo ... src/Line.obj
+	@echo ... src/Line.i
+	@echo ... src/Line.s
+	@echo ... src/Menu.obj
+	@echo ... src/Menu.i
+	@echo ... src/Menu.s
+	@echo ... src/StartMenu.obj
+	@echo ... src/StartMenu.i
+	@echo ... src/StartMenu.s
 	@echo ... src/Stop.obj
 	@echo ... src/Stop.i
 	@echo ... src/Stop.s
+	@echo ... src/System.obj
+	@echo ... src/System.i
+	@echo ... src/System.s
 .PHONY : help
 
 

@@ -1,3 +1,3 @@
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2AED/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2AED/cmake-build-debug/CMakeFiles/untitled.dir
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2AED/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/CMakeFiles/untitled.dir
+C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/CMakeFiles/rebuild_cache.dir

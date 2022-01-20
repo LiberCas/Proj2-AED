@@ -3,7 +3,16 @@
 //
 
 #include "Stop.h"
+#include <iostream>
 
+Stop::Stop() {
+    this->code = "";
+    this->name = "";
+    this->zone = "";
+    this->latitude = 0;
+    this->longitude = 0;
+
+}
 Stop::Stop(const string &code, const string &name, const string &zone, float latitude, float longitude) {
     this->code = code;
     this->name = name;
