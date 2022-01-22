@@ -3,4 +3,4 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled main.cpp src/Stop.cpp src/Stop.h src/Menu.cpp src/Menu.h src/System.cpp src/System.h src/Controller.cpp src/Controller.h src/StartMenu.cpp src/StartMenu.h src/Line.cpp src/Line.h)
+add_executable(untitled main.cpp src/Stop.cpp src/Stop.h src/Interface/Menu.cpp src/Interface/Menu.h src/Interface/System.cpp src/Interface/System.h src/Controller.cpp src/Controller.h src/Interface/OptionsMenu.cpp src/Interface/OptionsMenu.h src/Line.cpp src/Line.h src/Interface/DirectionsMenu.cpp src/Interface/DirectionsMenu.h)

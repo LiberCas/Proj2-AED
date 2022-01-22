@@ -1,5 +1,5 @@
 #include <iostream>
-#include "src/System.h"
+#include "src/Interface/System.h"
 
 int main() {
     System system = System();

@@ -164,6 +164,14 @@ Stop Controller::getClosestStop() {
     return Stop();
 }
 
+string Controller::getDirections(Stop origin, Stop destination) {
+    return "Por aí";
+}
+
+void Controller::writeFiles() {
+
+}
+
 
 
 

@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled">
-				<Option output="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug"/>
+				<Option output="C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -42,15 +42,15 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled"/>
+					<CompileFile command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled/fast">
-				<Option output="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug"/>
+				<Option output="C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -63,63 +63,69 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled/fast"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled/fast"/>
+					<CompileFile command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/main.cpp">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/main.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Controller.cpp">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Controller.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Controller.h">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Controller.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Line.cpp">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Interface/DirectionsMenu.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Menu.cpp">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Interface/DirectionsMenu.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Menu.h">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Interface/Menu.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/StartMenu.cpp">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Interface/Menu.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/StartMenu.h">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Interface/OptionsMenu.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Stop.cpp">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Interface/OptionsMenu.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Stop.h">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Interface/System.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/System.cpp">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Interface/System.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/System.h">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Line.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/dataset/Line.h">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Line.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/CMakeLists.txt">
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Stop.cpp">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/src/Stop.h">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="C:/Users/Acer/Desktop/Proj2-AED/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -15,7 +15,6 @@ private:
     vector<Stop> stopDB; //!< Airports data base
     vector<Line> linesDB;
 public:
-
     vector<Stop> readEachLineFile0(string code);
     vector<Stop> readEachLineFile1(string code);
     // Constructors
@@ -63,6 +62,7 @@ public:
     void writeFiles();
 
 
+    string getDirections(Stop origin, Stop destination);
 };
 
 #endif //PROJ1_CONTROLLER_H
