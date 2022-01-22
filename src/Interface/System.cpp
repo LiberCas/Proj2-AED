@@ -53,7 +53,9 @@ System::System() {
             if (dmOption == 3) continue;
             directionsMenu.showDirections();
         }
-
+        if (initOption == 1){
+            optionsMenu.printOptionsMenu(optionsMenu.getMainOps());
+        }
         if(initOption == 2) break;
     }
 }

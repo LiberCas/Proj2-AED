@@ -14,7 +14,7 @@ Controller::Controller() {
     ifstream stopsFile;
     stopsFile.open("stops.csv");
     if (stopsFile.fail()) {
-        cout << "This file doesn't exist!";
+        cout << "This file doesn't exist!\n";
     } else {
         string line;
         stopsFile >> line;
@@ -30,7 +30,7 @@ Controller::Controller() {
     ifstream linesFile;
     linesFile.open("lines.csv");
     if (linesFile.fail()) {
-        cout << "This file doesn't exist!";
+        cout << "This file doesn't exist!\n";
     } else {
         string l;
         stopsFile >> l;
