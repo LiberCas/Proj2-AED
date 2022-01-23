@@ -10,25 +10,25 @@
 
 
 Controller::Controller() {
-    //------------------------------------------------------------------Airports
+    //------------------------------------------------------------------Stops
     ifstream stopsFile;
-    stopsFile.open("stops.csv");
+    stopsFile.open("../src/dataset/stops.csv");
     if (stopsFile.fail()) {
         cout << "This file doesn't exist!\n";
     } else {
-        string line;
+        /*string line;
         stopsFile >> line;
         while (!stopsFile.eof()) {
             Stop stop;
             stopsFile >> stop;
             this->stopDB.push_back(stop);
-        }
+        }*/
     }
     stopsFile.close();
-    //------------------------------------------------------------------Flights
+    //------------------------------------------------------------------Lines
 
     ifstream linesFile;
-    linesFile.open("lines.csv");
+    linesFile.open("../src/dataset/lines.csv");
     if (linesFile.fail()) {
         cout << "This file doesn't exist!\n";
     } else {
@@ -54,7 +54,7 @@ Controller::Controller() {
 vector<Stop> Controller::readEachLineFile0(string code) {
     vector<Stop> res;
     ifstream linesFile;
-    string filename = "line_" + code + "_0.csv";
+    string filename = "../src/dataset/line_" + code + "_0.csv";
     linesFile.open(filename);
     if (linesFile.fail()) {
         cout << "This file doesn't exist!";
@@ -78,7 +78,7 @@ vector<Stop> Controller::readEachLineFile0(string code) {
 vector<Stop> Controller::readEachLineFile1(string code) {
     vector<Stop> res;
     ifstream linesFile;
-    string filename = "line_" + code + "_1.csv";
+    string filename = "../src/dataset/line_" + code + "_1.csv";
     linesFile.open(filename);
     if (linesFile.fail()) {
         cout << "This file doesn't exist!";

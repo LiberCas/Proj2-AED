@@ -32,6 +32,8 @@ public:
     void setLatitude(float latitude);
     void setLongitude(float longitude);
     friend istream &operator>>(istream &is, Stop &stop);
+
+    Stop(int x, int y);
 };
 
 

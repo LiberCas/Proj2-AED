@@ -82,3 +82,8 @@ istream & operator>>(istream &is, Stop &stop) {
     is.ignore();
     return is;
 }
+
+Stop::Stop(int latitude, int longitude) {
+    this->latitude = latitude;
+    this->longitude =longitude;
+}

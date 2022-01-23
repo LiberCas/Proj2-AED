@@ -23,6 +23,10 @@ public:
     bool checkStopId(string basicString);
 
     void showDirections();
+
+    bool insertCoordinates();
+
+    bool checkLineId(string basicString);
 };
 
 

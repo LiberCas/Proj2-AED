@@ -25,6 +25,8 @@ public:
     ~Line();
     const string &getCode() const;
     const string &getName() const;
+    const vector<Stop> getL0();
+    const vector<Stop> getL1();
     void setL0(const vector<Stop> l0) ;
     void setL1(const vector<Stop> l1);
     void setCode(const string &code);
