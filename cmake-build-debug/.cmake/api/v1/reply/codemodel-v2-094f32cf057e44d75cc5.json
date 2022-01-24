@@ -6,7 +6,6 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20"
@@ -39,7 +38,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "untitled::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-untitled-Debug-5d3606245385c6155811.json",
+					"jsonFile" : "target-untitled-Debug-b3e9be774df9f2e6f35a.json",
 					"name" : "untitled",
 					"projectIndex" : 0
 				}
@@ -49,12 +48,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug",
-		"source" : "C:/Users/Acer/Desktop/Proj2-AED"
+		"build" : "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug",
+		"source" : "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 2
 	}
 }
