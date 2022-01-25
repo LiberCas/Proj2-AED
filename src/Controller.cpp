@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <string>
 #include <fstream>
+#include <cmath>
 
 
 Controller::Controller() {
@@ -159,9 +160,13 @@ bool Controller::removeStop(string code) {
 
 
 
-Stop Controller::getClosestStop() {
-
-    return Stop();
+Stop Controller::getClosestStop(double lat1, double lon1) {
+    Stop min = stopDB[0];
+    for (int i=1;i<stopDB.size();i++){
+        if (haversine(lat1,lon1,min.getLatitude(),min.getLongitude())> haversine(lat1,lon1,stopDB[i].getLatitude(),stopDB[i].getLongitude()))
+            min = stopDB[i];
+    }
+    return min;
 }
 
 string Controller::getDirections(Stop origin, Stop destination) {
@@ -170,6 +175,44 @@ string Controller::getDirections(Stop origin, Stop destination) {
 
 void Controller::writeFiles() {
 
+}
+
+void Controller::createGraphLines() {
+    for (int i=0;i<linesDB.size();i++){
+        vector<Graph> graphsLine;
+        Graph g0 = Graph(linesDB[i].getL0().size());
+        for(int j = 1;j<linesDB[i].getL0().size();i++){
+            g0.addEdge(j,j+1, haversine(linesDB[i].getL0()[j-1].getLatitude(),linesDB[i].getL0()[j-1].getLongitude(),linesDB[i].getL0()[j].getLatitude(),linesDB[i].getL0()[j].getLongitude()));
+        }
+        graphsLine.push_back(g0);
+        Graph g1 = Graph(linesDB[i].getL1().size());
+        for(int j = 1;j<linesDB[i].getL1().size();i++){
+            g1.addEdge(j,j+1, haversine(linesDB[i].getL1()[j-1].getLatitude(),linesDB[i].getL1()[j-1].getLongitude(),linesDB[i].getL1()[j].getLatitude(),linesDB[i].getL1()[j].getLongitude()));
+        }
+        graphsLine.push_back(g1);
+        graphLineDB.push_back(graphsLine);
+    }
+}
+
+ double Controller::haversine(double lat1, double lon1, double lat2, double lon2) {
+    // distance between latitudes
+    // and longitudes
+    double dLat = (lat2 - lat1) *
+                  M_PI / 180.0;
+    double dLon = (lon2 - lon1) *
+                  M_PI / 180.0;
+
+    // convert to radians
+    lat1 = (lat1) * M_PI / 180.0;
+    lat2 = (lat2) * M_PI / 180.0;
+
+    // apply formulae
+    double a = pow(sin(dLat / 2), 2) +
+               pow(sin(dLon / 2), 2) *
+               cos(lat1) * cos(lat2);
+    double rad = 6371;
+    double c = 2 * asin(sqrt(a));
+    return rad * c;
 }
 
 

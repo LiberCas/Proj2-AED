@@ -7,6 +7,7 @@
 
 
 #include "Line.h"
+#include "Graph.h"
 #include <vector>
 #include <string>
 
@@ -14,6 +15,7 @@ class Controller{
 private:
     vector<Stop> stopDB; //!< Airports data base
     vector<Line> linesDB;
+    vector <vector<Graph>> graphLineDB;
 public:
     vector<Stop> readEachLineFile0(string code);
     vector<Stop> readEachLineFile1(string code);
@@ -54,13 +56,16 @@ public:
 
     // Specified Gets
     /** @brief  Returns the next available flight number (the smallest value not used).*/
-    Stop getClosestStop();
+    Stop getClosestStop(double lat1, double lon1);
 
 
     //Write
     /** @brief  Writes the .txt files upon Save&Quit*/
     void writeFiles();
 
+    void createGraphLines();
+    static double haversine(double lat1, double lon1,
+                            double lat2, double lon2);
 
     string getDirections(Stop origin, Stop destination);
 };
