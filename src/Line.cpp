@@ -40,11 +40,11 @@ void Line::setL1(const vector<Stop> l)  {
     l1=l;
 }
 void Line::setCode(const string &code) {
-    Line::code = code;
+    this->code = code;
 }
 
 void Line::setName(const string &name) {
-    Line::name = name;
+    this->name = name;
 }
 
 
@@ -52,9 +52,8 @@ istream & operator>>(istream &is, Line &line) {
     char temp[256];
     is.getline(temp, 100, ',');
     line.setCode((string)temp);
-    is.getline(temp, 100, ',');
+    is.getline(temp, 100,'\n');
     line.setName((string)temp);
-    is.ignore();
     return is;
 }
 

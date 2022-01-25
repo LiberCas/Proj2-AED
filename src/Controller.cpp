@@ -17,13 +17,13 @@ Controller::Controller() {
     if (stopsFile.fail()) {
         cout << "This file doesn't exist!\n";
     } else {
-        /*string line;
+        string line;
         stopsFile >> line;
         while (!stopsFile.eof()) {
             Stop stop;
             stopsFile >> stop;
             this->stopDB.push_back(stop);
-        }*/
+        }
     }
     stopsFile.close();
     //------------------------------------------------------------------Lines
@@ -34,11 +34,13 @@ Controller::Controller() {
         cout << "This file doesn't exist!\n";
     } else {
         string l;
-        stopsFile >> l;
+        linesFile >> l;
+        linesFile.ignore();
         while (!linesFile.eof()) {
             Line line;
             linesFile >> line;
-            if (line.getCode()=="300"||line.getCode()=="301"||line.getCode()=="302"||line.getCode()=="303" ){
+            if (line.getCode()=="") break;
+            else if (line.getCode()=="300"||line.getCode()=="301"||line.getCode()=="302"||line.getCode()=="303" ){
                 line.setL0(readEachLineFile0(line.getCode()));
             }
             else {
@@ -58,7 +60,7 @@ vector<Stop> Controller::readEachLineFile0(string code) {
     string filename = "../src/dataset/line_" + code + "_0.csv";
     linesFile.open(filename);
     if (linesFile.fail()) {
-        cout << "This file doesn't exist!";
+        cout << "This file doesn't exist!" ;
     } else {
         int i;
         linesFile >> i;
@@ -82,7 +84,7 @@ vector<Stop> Controller::readEachLineFile1(string code) {
     string filename = "../src/dataset/line_" + code + "_1.csv";
     linesFile.open(filename);
     if (linesFile.fail()) {
-        cout << "This file doesn't exist!";
+        cout  << "This file doesn't exist!"<< endl ;
     } else {
         int i;
         linesFile >> i;

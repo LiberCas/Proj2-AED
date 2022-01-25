@@ -77,7 +77,7 @@ istream & operator>>(istream &is, Stop &stop) {
     stop.setZone((string)temp);
     is.getline(temp, 100, ',');
     stop.setLatitude(stof(temp));
-    is.getline(temp, 100, ',');
+    is.getline(temp, 100);
     stop.setLongitude(stof(temp));
     is.ignore();
     return is;
