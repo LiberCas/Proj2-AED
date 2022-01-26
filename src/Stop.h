@@ -6,6 +6,8 @@
 #define UNTITLED_STOP_H
 
 #include <string>
+#include <list>
+#include "Edge.h"
 
 using namespace std;
 
@@ -16,6 +18,9 @@ private:
     string zone;
     float latitude;
     float longitude;
+    list<Edge> adj;
+    int distance;
+    bool visited;   // As the node been visited on a search?
 
 public:
     Stop();
@@ -27,12 +32,14 @@ public:
     float getLatitude() const;
     float getLongitude() const;
     void setCode(const string &code);
+    void setDistance(int distance);
+    void setVisited(bool visites);
     void setName(const string &name);
     void setZone(const string &zone);
     void setLatitude(float latitude);
     void setLongitude(float longitude);
     friend istream &operator>>(istream &is, Stop &stop);
-
+    void addEdge(Edge edge);
     Stop(int x, int y);
 };
 

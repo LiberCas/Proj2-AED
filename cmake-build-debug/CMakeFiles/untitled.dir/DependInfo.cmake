@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/main.cpp" "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/CMakeFiles/untitled.dir/main.cpp.obj"
   "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Controller.cpp" "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/CMakeFiles/untitled.dir/src/Controller.cpp.obj"
+  "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Edge.cpp" "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/CMakeFiles/untitled.dir/src/Edge.cpp.obj"
   "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Graph.cpp" "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/CMakeFiles/untitled.dir/src/Graph.cpp.obj"
   "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Interface/DirectionsMenu.cpp" "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/CMakeFiles/untitled.dir/src/Interface/DirectionsMenu.cpp.obj"
   "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Interface/Menu.cpp" "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/CMakeFiles/untitled.dir/src/Interface/Menu.cpp.obj"

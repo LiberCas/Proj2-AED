@@ -87,3 +87,15 @@ Stop::Stop(int latitude, int longitude) {
     this->latitude = latitude;
     this->longitude =longitude;
 }
+
+void Stop::addEdge(Edge edge) {
+    adj.push_back(edge);
+}
+
+void Stop::setDistance(int distance) {
+    this->distance=distance;
+}
+
+void Stop::setVisited(bool visites) {
+    this->visited=visites;
+}

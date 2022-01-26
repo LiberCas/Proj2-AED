@@ -176,6 +176,30 @@ src/Controller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Controller.cpp.s
 .PHONY : src/Controller.cpp.s
 
+src/Edge.obj: src/Edge.cpp.obj
+.PHONY : src/Edge.obj
+
+# target to build an object file
+src/Edge.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Edge.cpp.obj
+.PHONY : src/Edge.cpp.obj
+
+src/Edge.i: src/Edge.cpp.i
+.PHONY : src/Edge.i
+
+# target to preprocess a source file
+src/Edge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Edge.cpp.i
+.PHONY : src/Edge.cpp.i
+
+src/Edge.s: src/Edge.cpp.s
+.PHONY : src/Edge.s
+
+# target to generate assembly for a file
+src/Edge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Edge.cpp.s
+.PHONY : src/Edge.cpp.s
+
 src/Graph.obj: src/Graph.cpp.obj
 .PHONY : src/Graph.obj
 
@@ -359,6 +383,9 @@ help:
 	@echo ... src/Controller.obj
 	@echo ... src/Controller.i
 	@echo ... src/Controller.s
+	@echo ... src/Edge.obj
+	@echo ... src/Edge.i
+	@echo ... src/Edge.s
 	@echo ... src/Graph.obj
 	@echo ... src/Graph.i
 	@echo ... src/Graph.s
