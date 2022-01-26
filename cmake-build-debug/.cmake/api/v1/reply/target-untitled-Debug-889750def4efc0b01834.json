@@ -125,8 +125,7 @@
 				12,
 				14,
 				16,
-				17,
-				19
+				17
 			]
 		}
 	],
@@ -236,11 +235,6 @@
 			"compileGroupIndex" : 0,
 			"path" : "src/Edge.cpp",
 			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/Edge.h",
-			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

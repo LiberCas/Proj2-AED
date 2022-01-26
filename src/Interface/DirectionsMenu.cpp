@@ -44,7 +44,7 @@ bool DirectionsMenu::searchByLine() {
     for(auto stop : searchLine)
         stopsOptions.push_back(stop.getName());
     stopsOptions.push_back("Go Back");
-    option = printOptionsMenu(stopsOptions, "Select Stop");
+    option = printOptionsMenu(stopsOptions, "Select Stop&Edge");
     if(option >= searchLine.size())
         return false;
     if(currentInput == 'O')

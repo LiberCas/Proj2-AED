@@ -26,6 +26,10 @@ Controller::Controller() {
         }
     }
     stopsFile.close();
+    this->graph = Graph(stopDB.size());
+    for (int i=0;i<stopDB.size();i++){
+        graph.addStop(stopDB[i]);
+    }
     //------------------------------------------------------------------Lines
 
     ifstream linesFile;
@@ -42,10 +46,19 @@ Controller::Controller() {
             if (line.getCode()=="") break;
             else if (line.getCode()=="300"||line.getCode()=="301"||line.getCode()=="302"||line.getCode()=="303" ){
                 line.setL0(readEachLineFile0(line.getCode()));
+                for (int i = 0; i<line.getL0().size()-1;i++){
+                    line.getL0()[i].addEdge(Edge(line.getL0()[i+1],haversine(line.getL0()[i].getLatitude(),line.getL0()[i].getLongitude(),line.getL0()[i+1].getLatitude(),line.getL0()[i+1].getLongitude()),line.getCode()));
+                }
             }
             else {
                 line.setL0(readEachLineFile0(line.getCode()));
+                for (int i = 0; i<line.getL0().size()-1;i++){
+                    line.getL0()[i].addEdge(Edge(line.getL0()[i+1],haversine(line.getL0()[i].getLatitude(),line.getL0()[i].getLongitude(),line.getL0()[i+1].getLatitude(),line.getL0()[i+1].getLongitude()),line.getCode()));
+                }
                 line.setL1(readEachLineFile1(line.getCode()));
+                for (int i = 0; i<line.getL1().size()-1;i++){
+                    line.getL1()[i].addEdge(Edge(line.getL1()[i+1],haversine(line.getL1()[i].getLatitude(),line.getL1()[i].getLongitude(),line.getL1()[i+1].getLatitude(),line.getL1()[i+1].getLongitude()),line.getCode()));
+                }
             }
             this->linesDB.push_back(line);
 
@@ -53,6 +66,8 @@ Controller::Controller() {
     }
     linesFile.close();
 }
+
+
 
 vector<Stop> Controller::readEachLineFile0(string code) {
     vector<Stop> res;
@@ -175,26 +190,8 @@ string Controller::getDirections(Stop origin, Stop destination) {
     return "Por aí";
 }
 
-void Controller::writeFiles() {
 
-}
 
-void Controller::createGraphLines() {
-    for (int i=0;i<linesDB.size();i++){
-        vector<Graph> graphsLine;
-        Graph g0 = Graph(linesDB[i].getL0().size());
-        for(int j = 1;j<linesDB[i].getL0().size();i++){
-            g0.addEdge(j,j+1, haversine(linesDB[i].getL0()[j-1].getLatitude(),linesDB[i].getL0()[j-1].getLongitude(),linesDB[i].getL0()[j].getLatitude(),linesDB[i].getL0()[j].getLongitude()));
-        }
-        graphsLine.push_back(g0);
-        Graph g1 = Graph(linesDB[i].getL1().size());
-        for(int j = 1;j<linesDB[i].getL1().size();i++){
-            g1.addEdge(j,j+1, haversine(linesDB[i].getL1()[j-1].getLatitude(),linesDB[i].getL1()[j-1].getLongitude(),linesDB[i].getL1()[j].getLatitude(),linesDB[i].getL1()[j].getLongitude()));
-        }
-        graphsLine.push_back(g1);
-        graphLineDB.push_back(graphsLine);
-    }
-}
 
  double Controller::haversine(double lat1, double lon1, double lat2, double lon2) {
     // distance between latitudes

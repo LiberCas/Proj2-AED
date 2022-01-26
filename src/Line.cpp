@@ -57,10 +57,10 @@ istream & operator>>(istream &is, Line &line) {
     return is;
 }
 
-const vector<Stop> Line::getL0() {
+ vector<Stop> Line::getL0() {
     return l0;
 }
 
-const vector<Stop> Line::getL1() {
+ vector<Stop> Line::getL1() {
     return l1;
 }

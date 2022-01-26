@@ -13,9 +13,11 @@
 
 class Controller{
 private:
+    Controller(Graph graph1);
+
     vector<Stop> stopDB; //!< Airports data base
     vector<Line> linesDB;
-    vector <vector<Graph>> graphLineDB;
+    Graph graph;
 public:
     vector<Stop> readEachLineFile0(string code);
     vector<Stop> readEachLineFile1(string code);

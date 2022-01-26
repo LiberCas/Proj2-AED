@@ -6,61 +6,54 @@
 #include "Graph.h"
 #include "minHeap.h"
 
+Graph::Graph() {
+    this->n=0;
+    stops={};
+}
 // Constructor: nr nodes and direction (default: undirected)
-Graph::Graph(int num, bool dir) : n(num), hasDir(dir), stops(num+1) {
+Graph::Graph(int num, bool dir) : n(num), hasDir(dir){
+    stops.push_back(Stop());
 }
 
+void Graph::addStop(Stop &stop) {
+    this->stops.push_back(stop);
+}
 // Add edge from source to destination with a certain weight
-void Graph::addEdge(int src, string dest, int weight,string code) {
-    if (src<1 || src>n || dest<1 || dest>n) return;
+void Graph::addEdge(int src, Stop& dest, int weight,string code) {
+    if (src<1 || src>n ) return;
     stops[src].addEdge(Edge(dest,weight,code));
-    nodes[src].adj.push_back({dest, weight});
-    if (!hasDir) nodes[dest].adj.push_back({src, weight});
+    if (!hasDir) dest.addEdge(Edge(dest,weight,code));
 }
 
 // Depth-First Search: example implementation
-void Graph::dfs(int v) {
-    cout << v << " "; // show node order
-    nodes[v].visited = true;
-    for (auto e : nodes[v].adj) {
-        int w = e.dest;
-        if (!nodes[w].visited)
+void Graph::dfs(Stop& w) {
+    w.setVisited(true) ;
+    for (auto &e : w.getAdj()) {
+        Stop w = e.getDest();
+        if (w.getVisited())
             dfs(w);
     }
 }
 
 // Depth-First Search: example implementation
-void Graph::bfs(int v) {
-    for (int v=1; v<=n; v++) nodes[v].visited = false;
-    queue<int> q; // queue of unvisited nodes
-    q.push(v);
-    nodes[v]. visited = true;
+void Graph::bfs(Stop& x) {
+    for (int v=1; v<=n; v++) stops[v].setVisited(false);
+    queue<Stop> q; // queue of unvisited nodes
+    q.push(x);
+    x.setVisited(true);
     while (!q.empty()) { // while there are still unvisited nodes
-        int u = q.front(); q.pop();
-        cout << u << " "; // show node order
-        for (auto e : nodes[u].adj) {
-            int w = e.dest;
-            if (!nodes[w].visited) {
+        Stop u = q.front(); q.pop();
+        for (auto e : u.getAdj()) {
+            Stop w = e.getDest();
+            if (!w.getVisited()) {
                 q.push(w);
-                nodes[w].visited = true;
+                w.setVisited(true);
             }
         }
     }
 }
 
-// ----------------------------------------------------------
-// Exercicio 1: Introdução a uma classe simplificada de grafos
-// ----------------------------------------------------------
 
-// ..............................
-// a) Contando diferentes somas de pares
-// TODO
-int Graph::outDegree(int v) {
-    if (v>n||v==0)
-        return -1;
-    else
-        return nodes[v].adj.size();
-}
 
 // ----------------------------------------------------------
 // Exercicio 2: Componentes conexos
@@ -70,48 +63,24 @@ int Graph::outDegree(int v) {
 // a) Contando componentes conexos
 // TODO
 int Graph::connectedComponents() {
-    for (int v=1; v<=n; v++) nodes[v].visited = false;
+    for (int v=1; v<=n; v++) stops[v].setVisited(false);
     int res = 0;
     for (int i=1 ; i<n;i++){
-        if (!nodes[i]. visited){
+        if (!stops[i].getVisited()){
             res++;
-            visitando(i);
+            visitando(stops[i]);
         }
     }
     return res;
 }
 
-void Graph::visitando(int v){
-    nodes[v].visited = true;
-    for (auto e : nodes[v].adj) {
-        int w = e.dest;
-        if (!nodes[w].visited)
+void Graph::visitando(Stop& v){
+    v.setVisited(true);
+    for (auto e : v.getAdj()) {
+        Stop w = e.getDest();
+        if (!w.getVisited())
             visitando(w);
     }
-}
-// ..............................
-// b) Componente gigante
-// TODO
-int Graph::giantComponent() {
-    for (int v=1; v<=n; v++) nodes[v].visited = false;
-    int res = 0;
-    for (int i=1 ; i<n;i++){
-        if (!nodes[i]. visited){
-            res = max(res,conta(i));
-        }
-    }
-    return res;
-
-}
-int Graph::conta(int v){
-    int res=1;
-    nodes[v].visited = true;
-    for (auto e : nodes[v].adj) {
-        int w = e.dest;
-        if (!nodes[w].visited)
-            res += conta(w);
-    }
-    return res;
 }
 
 
@@ -119,99 +88,91 @@ int Graph::conta(int v){
 // Exercicio 3: Ordenacao topologica
 // ----------------------------------------------------------
 // TODO
-list<int> Graph::topologicalSorting() {
-    list<int> order;
+list<Stop> Graph::topologicalSorting() {
+    list<Stop> order;
     for(int i = 1; i <= n; i++)
-        nodes[i].visited = false;
+        stops[i].setVisited(false);
     for(int i = 1; i <= n; i++){
-        if(!nodes[i].visited){
-            dfsTopo(i, order);
+        if(!stops[i].getVisited()){
+            dfsTopo(stops[i], order);
         }
     }
     return order;
 }
-void Graph::dfsTopo(int v, list<int>& order) {
-    nodes[v].visited = true;
-    for(auto e : nodes[v].adj){
-        int w = e.dest;
-        if(!nodes[w].visited)
+void Graph::dfsTopo(Stop& v, list<Stop>& order) {
+    v.setVisited(true);
+    for(auto &e : v.getAdj()){
+        Stop w = e.getDest();
+        if(!w.getVisited())
             dfsTopo(w, order);
     }
     order.push_front(v);
 }
 
-// ----------------------------------------------------------
-// Exercicio 4: Distancias em grafos nao pesados
-// ----------------------------------------------------------
-
 // ..............................
 // a) Distancia entre dois nos
 // TODO
-int Graph::distance(int a, int b) {
+int Graph::distance(Stop a, Stop b) {
     if(a == b) return 0;
     for(int i = 1; i <= n; i++)
-        nodes[i].distance = -1;
+        stops[i].setDistance(-1);
     bfsDist(a);
-    return nodes[b].distance;
+    return b.getDistance();
 }
-void Graph::bfsDist(int v){
-    nodes[v].distance = 0;
-    for (int v=1; v<=n; v++) nodes[v].visited = false;
-    queue<int> q; // queue of unvisited nodes
-    q.push(v);
-    nodes[v]. visited = true;
+void Graph::bfsDist(Stop x){
+    x.setDistance(0);
+    for (int v=1; v<=n; v++) stops[v].setVisited(false);
+    queue<Stop> q; // queue of unvisited nodes
+    q.push(x);
+    x.setVisited(true);
     while (!q.empty()) { // while there are still unvisited nodes
-        int u = q.front(); q.pop();
-        cout << u << " "; // show node order
-        for (auto e : nodes[u].adj) {
-            int w = e.dest;
-            if (!nodes[w].visited) {
+        Stop u = q.front(); q.pop();
+        for (auto &e : u.getAdj()) {
+            Stop w = e.getDest();
+            if (!w.getVisited()) {
                 q.push(w);
-                nodes[w].visited = true;
-                nodes[w].distance = nodes[u].distance + 1;
+                w.setVisited(true);
+                w.setDistance(u.getDistance()+1);
             }
         }
     }
 
 }
-// ..............................
-// b) Diametro
-// TODO
-int Graph::diameter() {
-    if (connectedComponents() > 1) return -1;
-    else{
-        bfsDist(1);
-        int d = 0;
-        for(int i = 1; i <= n; i++)
-            d = max(d, nodes[i].distance);
-        return d;
-    }
-}
 
-int Graph::dijkstra_distance(int a, int b) {
+int Graph::getIndexStop(string code) {
+    for(int i=1;i<=n;i++){
+        if(stops[i].getCode()==code){
+            return i;
+        }
+    }
+    return -1;
+}
+int Graph::dijkstra_distance(Stop a, Stop b) {
     if (a==b) return 0;
     for(int i = 1; i <= n; i++) {
-        nodes[i].distance=INT_MAX;
-        nodes[i].visited= false;
+        stops[i].setDistance(INT_MAX);
+        stops[i].setVisited(false);
     }
-    nodes[a].distance=0;
-    MinHeap<int,int> q(n,INT_MIN);
+    a.setDistance(0);
+    MinHeap<string,int> q(n,NULL);
     for (int i = 1; i<=n;i++){
-        q.insert(i,nodes[i].distance);
+        q.insert(stops[i].getCode(),stops[i].getDistance());
     }
     while (q.getSize()!=0){
-        int u = q.removeMin();
-        nodes[u].visited= true;
-        for (auto & edge : nodes[u].adj){
-            if ( (nodes[u].distance + edge.weight < nodes[edge.dest].distance) && q.hasKey(edge.dest)  ){
-                nodes[edge.dest].distance=nodes[u].distance + edge.weight;
-                q.decreaseKey(edge.dest,nodes[edge.dest].distance);
+        string u = q.removeMin();
+        int x= getIndexStop(u);
+        stops[x].setVisited(true);
+        for (auto & edge : stops[x].getAdj()){
+            if ( (stops[x].getDistance() + edge.getWeight() < edge.getDest().getDistance()) && q.hasKey(edge.getDest().getCode())  ){
+                stops[getIndexStop(edge.getDest().getCode())].setDistance(stops[x].getDistance()+edge.getWeight());
+                q.decreaseKey(edge.getDest().getCode(),stops[getIndexStop(edge.getDest().getCode())].getDistance());
             }
         }
 
     }
-    if (nodes[b].distance==INT_MAX) return -1;
-    return nodes[b].distance;
+    if (b.getDistance()==INT_MAX) return -1;
+    return b.getDistance();
 }
+
 
 
