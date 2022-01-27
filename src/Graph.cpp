@@ -22,7 +22,7 @@ void Graph::addEdge(int src, Stop& dest, int weight,string code) {
     stops[src].addEdge(Edge(dest,weight,code));
     if (!hasDir) dest.addEdge(Edge(dest,weight,code));
 }
-
+/*
 // Depth-First Search: example implementation
 void Graph::dfs(Stop& w) {
     w.setVisited(true) ;
@@ -138,7 +138,7 @@ void Graph::bfsDist(Stop x){
 }
 
 int Graph::getIndexStop(string code) {
-    for(int i=1;i<=n;i++){
+    for(int i=0;i<=n;i++){
         if(stops[i].getCode()==code){
             return i;
         }
@@ -176,5 +176,5 @@ double Graph::dijkstra_distance(Stop& a, Stop& b) {
     return b.getDistance();
 }
 
-
+*/
 

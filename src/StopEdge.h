@@ -35,7 +35,7 @@ public:
     float getLongitude() const;
     int getDistance()const;
     bool getVisited() const;
-    const list<Edge> &getAdj() const;
+    const list<Edge> &getAdj();
     void setCode(const string &code);
     void setDistance(double distance);
     void setVisited(bool visited);
@@ -56,20 +56,19 @@ public:
 using namespace std;
 class Edge{
 private:
-    Stop origin;
     Stop dest;   // Destination node
     double weight; // An integer weight
     string lineCode;
 public:
-    Edge(Stop dest,double weight, string lineCode);
-     Stop getDest() const;
+    Edge(Stop& dest, double weight, string lineCode);
+    Stop& getDest();
     int getWeight() const;
     string getLineCode();
-    void setDest(Stop dest);
+    void setDest(Stop& dest);
     void setWeight(int weight);
     void setLineCode(string lineCode);
     friend bool operator==(const Edge& e1, const Edge& e2){
-        return(e1.weight==e2.weight && e1.lineCode==e2.lineCode && e1.origin == e2.origin && e1.dest==e2.dest);
+        return(e1.weight==e2.weight && e1.lineCode==e2.lineCode && e1.dest==e2.dest);
     }
 
 };

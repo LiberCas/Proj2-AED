@@ -114,20 +114,20 @@ bool Stop::getVisited() const {
     return visited;
 }
 
-const list<struct Edge> & Stop::getAdj() const {
+const list<struct Edge> & Stop::getAdj() {
     return adj;
 }
 
 //----------------------------------------------------------------------------------------------
 
 
-Edge::Edge(Stop dest, double weight, string lineCode) {
+Edge::Edge(Stop& dest, double weight, string lineCode) {
     this->weight=weight;
     this->lineCode=lineCode;
     this->dest=dest;
 }
 
- Stop Edge::getDest() const {
+ Stop& Edge::getDest() {
     return dest;
 }
 
@@ -139,8 +139,8 @@ int Edge::getWeight() const {
     return weight;
 }
 
-void Edge::setDest(Stop dest) {
-    this->dest =dest;
+void Edge::setDest(Stop&  dest) {
+    this->dest = dest;
 }
 
 void Edge::setLineCode(string lineCode) {

@@ -33,10 +33,10 @@ const string &Line::getName() const {
     return name;
 }
 
-void Line::setL0(const vector<Stop> l)  {
+void Line::setL0(const vector<int> l)  {
     l0=l;
 }
-void Line::setL1(const vector<Stop> l)  {
+void Line::setL1(const vector<int> l)  {
     l1=l;
 }
 void Line::setCode(const string &code) {
@@ -60,10 +60,10 @@ istream & operator>>(istream &is, Line &line) {
     return is;
 }
 
- vector<Stop>& Line::getL0() {
+ vector<int>& Line::getL0() {
     return l0;
 }
 
- vector<Stop>& Line::getL1() {
+ vector<int>& Line::getL1() {
     return l1;
 }

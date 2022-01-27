@@ -59,6 +59,15 @@ void Controller::readLines() {
     }
 }
 
+int Controller::getIndexStop(string code) {
+    for(int i=0;i<=stopDB.size();i++){
+        if(stopDB[i].getCode()==code){
+            return i;
+        }
+    }
+    return -1;
+}
+
 void Controller::extractStopsFromLines(){
     for(int i=0; i<linesDB.size(); i++){
         ifstream individLinesFile;
@@ -67,26 +76,29 @@ void Controller::extractStopsFromLines(){
         string prevStopCode, nextStopCode;
         getline(individLinesFile, prevStopCode);
         getline(individLinesFile, prevStopCode);
+        int prevStop = getIndexStop(prevStopCode);
         while(getline(individLinesFile, nextStopCode)){
-            double weight= haversine(findStop(prevStopCode).getLatitude(), findStop(prevStopCode).getLongitude(), findStop(nextStopCode).getLatitude(), findStop(nextStopCode).getLongitude());
-            findStop(prevStopCode).addEdge(Edge(findStop(nextStopCode), weight,code));
-            if(code=="300"||code=="301"||code=="302"||code=="303")
-                findStop(nextStopCode).addEdge(Edge(findStop(prevStopCode),weight,code));
-            linesDB[i].getL0().push_back(findStop(prevStopCode));
-            prevStopCode=nextStopCode;
+            int nextStop = getIndexStop(nextStopCode);
+            double weight=haversine(stopDB[prevStop].getLatitude(), stopDB[prevStop].getLongitude(), stopDB[nextStop].getLatitude(), stopDB[nextStop].getLongitude());
+            stopDB[prevStop].addEdge(Edge(stopDB[nextStop], weight,code));
+            linesDB[i].getL0().push_back(prevStop);
+            prevStop=nextStop;
         }
-        linesDB[i].getL0().push_back(findStop(prevStopCode));
+        linesDB[i].getL0().push_back(prevStop);
         individLinesFile.close();
         individLinesFile.open("../src/dataset/line_" + code + "_1.csv");
         if(individLinesFile.peek()!='0') {
             getline(individLinesFile, prevStopCode);
             getline(individLinesFile, prevStopCode);
+            prevStop = getIndexStop(prevStopCode);
             while(getline(individLinesFile, nextStopCode)){
-                double weight= haversine(findStop(prevStopCode).getLatitude(), findStop(prevStopCode).getLongitude(), findStop(nextStopCode).getLatitude(), findStop(nextStopCode).getLongitude());
-                findStop(prevStopCode).addEdge(Edge(findStop(nextStopCode),weight,code));
-                linesDB[i].getL1().push_back(findStop(prevStopCode));
-                prevStopCode=nextStopCode;
+                int nextStop = getIndexStop(nextStopCode);
+                double weight= haversine(stopDB[prevStop].getLatitude(), stopDB[prevStop].getLongitude(), stopDB[nextStop].getLatitude(), stopDB[nextStop].getLongitude());
+                stopDB[prevStop].addEdge(Edge(stopDB[nextStop],weight,code));
+                linesDB[i].getL1().push_back(prevStop);
+                prevStop=nextStop;
             }
+            linesDB[i].getL1().push_back(prevStop);
         }
         individLinesFile.close();
     }

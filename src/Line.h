@@ -15,8 +15,8 @@ class Line {
 private:
     string code;
     string name;
-    vector<Stop> l0 = vector<Stop>();
-    vector<Stop> l1= vector<Stop>();
+    vector<int> l0 = vector<int>();
+    vector<int> l1= vector<int>();
 
 
 public:
@@ -25,10 +25,10 @@ public:
     ~Line();
     const string &getCode() const;
     const string &getName() const;
-     vector<Stop>& getL0();
-     vector<Stop>& getL1();
-    void setL0(const vector<Stop> l0) ;
-    void setL1(const vector<Stop> l1);
+     vector<int>& getL0();
+     vector<int>& getL1();
+    void setL0(const vector<int> l0) ;
+    void setL1(const vector<int> l1);
     void setCode(const string &code);
     void setName(const string &name);
     friend istream &operator>>(istream &is, Line &line);
