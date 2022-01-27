@@ -11,9 +11,7 @@ Graph::Graph() {
     stops={};
 }
 // Constructor: nr nodes and direction (default: undirected)
-Graph::Graph(int num, bool dir) : n(num), hasDir(dir){
-    stops.push_back(Stop());
-}
+Graph::Graph(int num, bool dir) : n(num), hasDir(dir){}
 
 void Graph::addStop(Stop &stop) {
     this->stops.push_back(stop);

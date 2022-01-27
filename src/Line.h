@@ -7,7 +7,7 @@
 
 #include "string"
 #include "vector"
-#include "Stop&Edge.h"
+#include "StopEdge.h"
 
 using namespace std;
 
@@ -25,8 +25,8 @@ public:
     ~Line();
     const string &getCode() const;
     const string &getName() const;
-     vector<Stop> getL0();
-     vector<Stop> getL1();
+     vector<Stop>& getL0();
+     vector<Stop>& getL1();
     void setL0(const vector<Stop> l0) ;
     void setL1(const vector<Stop> l1);
     void setCode(const string &code);

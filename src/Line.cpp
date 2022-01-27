@@ -50,17 +50,20 @@ void Line::setName(const string &name) {
 
 istream & operator>>(istream &is, Line &line) {
     char temp[256];
-    is.getline(temp, 100, ',');
+    if(!is.getline(temp, 100, ',')){
+        is.ignore();
+        return is;
+    }
     line.setCode((string)temp);
     is.getline(temp, 100,'\n');
     line.setName((string)temp);
     return is;
 }
 
- vector<Stop> Line::getL0() {
+ vector<Stop>& Line::getL0() {
     return l0;
 }
 
- vector<Stop> Line::getL1() {
+ vector<Stop>& Line::getL1() {
     return l1;
 }

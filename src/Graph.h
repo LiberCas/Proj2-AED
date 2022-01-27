@@ -7,12 +7,11 @@
 #include <list>
 #include <queue>
 #include <iostream>
-#include "Stop&Edge.h"
+#include "StopEdge.h"
 
 using namespace std;
 
 class Graph {
-    Stop stop;
     int n;              // Graph size (vertices are numbered from 1 to n)
     bool hasDir;        // false: undirect; true: directed
     vector<Stop> stops; // The list of nodes being represented

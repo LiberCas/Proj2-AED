@@ -56,13 +56,37 @@ RM = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\35196\OneDrive\Documentos\GitHub\Proj2-AED
+CMAKE_SOURCE_DIR = "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 3\AED\Proj2-AED2"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\35196\OneDrive\Documentos\GitHub\Proj2-AED\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 3\AED\Proj2-AED2\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -84,11 +108,32 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\35196\OneDrive\Documentos\GitHub\Proj2-AED\cmake-build-debug\CMakeFiles C:\Users\35196\OneDrive\Documentos\GitHub\Proj2-AED\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 3\AED\Proj2-AED2\cmake-build-debug\CMakeFiles" "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 3\AED\Proj2-AED2\cmake-build-debug\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\35196\OneDrive\Documentos\GitHub\Proj2-AED\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 3\AED\Proj2-AED2\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -127,6 +172,58 @@ untitled: cmake_check_build_system
 untitled/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/build
 .PHONY : untitled/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f lib\googletest-master\googlemock\CMakeFiles\gmock_main.dir\build.make lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f lib\googletest-master\googlemock\CMakeFiles\gmock.dir\build.make lib/googletest-master/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f lib\googletest-master\googletest\CMakeFiles\gtest.dir\build.make lib/googletest-master/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f lib\googletest-master\googletest\CMakeFiles\gtest_main.dir\build.make lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -176,30 +273,6 @@ src/Controller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Controller.cpp.s
 .PHONY : src/Controller.cpp.s
 
-src/Edge.obj: src/Edge.cpp.obj
-.PHONY : src/Edge.obj
-
-# target to build an object file
-src/Edge.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Edge.cpp.obj
-.PHONY : src/Edge.cpp.obj
-
-src/Edge.i: src/Edge.cpp.i
-.PHONY : src/Edge.i
-
-# target to preprocess a source file
-src/Edge.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Edge.cpp.i
-.PHONY : src/Edge.cpp.i
-
-src/Edge.s: src/Edge.cpp.s
-.PHONY : src/Edge.s
-
-# target to generate assembly for a file
-src/Edge.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Edge.cpp.s
-.PHONY : src/Edge.cpp.s
-
 src/Graph.obj: src/Graph.cpp.obj
 .PHONY : src/Graph.obj
 
@@ -223,78 +296,6 @@ src/Graph.s: src/Graph.cpp.s
 src/Graph.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Graph.cpp.s
 .PHONY : src/Graph.cpp.s
-
-src/Interface/DirectionsMenu.obj: src/Interface/DirectionsMenu.cpp.obj
-.PHONY : src/Interface/DirectionsMenu.obj
-
-# target to build an object file
-src/Interface/DirectionsMenu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Interface/DirectionsMenu.cpp.obj
-.PHONY : src/Interface/DirectionsMenu.cpp.obj
-
-src/Interface/DirectionsMenu.i: src/Interface/DirectionsMenu.cpp.i
-.PHONY : src/Interface/DirectionsMenu.i
-
-# target to preprocess a source file
-src/Interface/DirectionsMenu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Interface/DirectionsMenu.cpp.i
-.PHONY : src/Interface/DirectionsMenu.cpp.i
-
-src/Interface/DirectionsMenu.s: src/Interface/DirectionsMenu.cpp.s
-.PHONY : src/Interface/DirectionsMenu.s
-
-# target to generate assembly for a file
-src/Interface/DirectionsMenu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Interface/DirectionsMenu.cpp.s
-.PHONY : src/Interface/DirectionsMenu.cpp.s
-
-src/Interface/Menu.obj: src/Interface/Menu.cpp.obj
-.PHONY : src/Interface/Menu.obj
-
-# target to build an object file
-src/Interface/Menu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Interface/Menu.cpp.obj
-.PHONY : src/Interface/Menu.cpp.obj
-
-src/Interface/Menu.i: src/Interface/Menu.cpp.i
-.PHONY : src/Interface/Menu.i
-
-# target to preprocess a source file
-src/Interface/Menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Interface/Menu.cpp.i
-.PHONY : src/Interface/Menu.cpp.i
-
-src/Interface/Menu.s: src/Interface/Menu.cpp.s
-.PHONY : src/Interface/Menu.s
-
-# target to generate assembly for a file
-src/Interface/Menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Interface/Menu.cpp.s
-.PHONY : src/Interface/Menu.cpp.s
-
-src/Interface/OptionsMenu.obj: src/Interface/OptionsMenu.cpp.obj
-.PHONY : src/Interface/OptionsMenu.obj
-
-# target to build an object file
-src/Interface/OptionsMenu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Interface/OptionsMenu.cpp.obj
-.PHONY : src/Interface/OptionsMenu.cpp.obj
-
-src/Interface/OptionsMenu.i: src/Interface/OptionsMenu.cpp.i
-.PHONY : src/Interface/OptionsMenu.i
-
-# target to preprocess a source file
-src/Interface/OptionsMenu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Interface/OptionsMenu.cpp.i
-.PHONY : src/Interface/OptionsMenu.cpp.i
-
-src/Interface/OptionsMenu.s: src/Interface/OptionsMenu.cpp.s
-.PHONY : src/Interface/OptionsMenu.s
-
-# target to generate assembly for a file
-src/Interface/OptionsMenu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Interface/OptionsMenu.cpp.s
-.PHONY : src/Interface/OptionsMenu.cpp.s
 
 src/Interface/System.obj: src/Interface/System.cpp.obj
 .PHONY : src/Interface/System.obj
@@ -344,29 +345,29 @@ src/Line.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Line.cpp.s
 .PHONY : src/Line.cpp.s
 
-src/Stop.obj: src/Stop.cpp.obj
-.PHONY : src/Stop.obj
+src/StopEdge.obj: src/StopEdge.cpp.obj
+.PHONY : src/StopEdge.obj
 
 # target to build an object file
-src/Stop.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Stop.cpp.obj
-.PHONY : src/Stop.cpp.obj
+src/StopEdge.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/StopEdge.cpp.obj
+.PHONY : src/StopEdge.cpp.obj
 
-src/Stop.i: src/Stop.cpp.i
-.PHONY : src/Stop.i
+src/StopEdge.i: src/StopEdge.cpp.i
+.PHONY : src/StopEdge.i
 
 # target to preprocess a source file
-src/Stop.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Stop.cpp.i
-.PHONY : src/Stop.cpp.i
+src/StopEdge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/StopEdge.cpp.i
+.PHONY : src/StopEdge.cpp.i
 
-src/Stop.s: src/Stop.cpp.s
-.PHONY : src/Stop.s
+src/StopEdge.s: src/StopEdge.cpp.s
+.PHONY : src/StopEdge.s
 
 # target to generate assembly for a file
-src/Stop.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/Stop.cpp.s
-.PHONY : src/Stop.cpp.s
+src/StopEdge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/src/StopEdge.cpp.s
+.PHONY : src/StopEdge.cpp.s
 
 # Help Target
 help:
@@ -375,7 +376,15 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... rebuild_cache
+	@echo ... gmock
+	@echo ... gmock_main
+	@echo ... gtest
+	@echo ... gtest_main
 	@echo ... untitled
 	@echo ... main.obj
 	@echo ... main.i
@@ -383,30 +392,18 @@ help:
 	@echo ... src/Controller.obj
 	@echo ... src/Controller.i
 	@echo ... src/Controller.s
-	@echo ... src/Edge.obj
-	@echo ... src/Edge.i
-	@echo ... src/Edge.s
 	@echo ... src/Graph.obj
 	@echo ... src/Graph.i
 	@echo ... src/Graph.s
-	@echo ... src/Interface/DirectionsMenu.obj
-	@echo ... src/Interface/DirectionsMenu.i
-	@echo ... src/Interface/DirectionsMenu.s
-	@echo ... src/Interface/Menu.obj
-	@echo ... src/Interface/Menu.i
-	@echo ... src/Interface/Menu.s
-	@echo ... src/Interface/OptionsMenu.obj
-	@echo ... src/Interface/OptionsMenu.i
-	@echo ... src/Interface/OptionsMenu.s
 	@echo ... src/Interface/System.obj
 	@echo ... src/Interface/System.i
 	@echo ... src/Interface/System.s
 	@echo ... src/Line.obj
 	@echo ... src/Line.i
 	@echo ... src/Line.s
-	@echo ... src/Stop.obj
-	@echo ... src/Stop.i
-	@echo ... src/Stop.s
+	@echo ... src/StopEdge.obj
+	@echo ... src/StopEdge.i
+	@echo ... src/StopEdge.s
 .PHONY : help
 
 

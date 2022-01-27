@@ -8,43 +8,18 @@ CMakeFiles/untitled.dir/main.cpp.obj: \
  ../src/Interface/Menu.h \
  ../src/Interface/System.h \
  ../src/Line.h \
- ../src/Stop.h
+ ../src/StopEdge.h
 CMakeFiles/untitled.dir/src/Controller.cpp.obj: \
  ../src/Controller.cpp \
  ../src/Controller.h \
  ../src/Graph.h \
  ../src/Line.h \
- ../src/Stop.h
+ ../src/StopEdge.h
 CMakeFiles/untitled.dir/src/Graph.cpp.obj: \
  ../src/Graph.cpp \
  ../src/Graph.h \
+ ../src/StopEdge.h \
  ../src/minHeap.h
-CMakeFiles/untitled.dir/src/Interface/DirectionsMenu.cpp.obj: \
- ../src/Controller.h \
- ../src/Graph.h \
- ../src/Interface/DirectionsMenu.cpp \
- ../src/Interface/DirectionsMenu.h \
- ../src/Interface/Menu.h \
- ../src/Interface/System.h \
- ../src/Line.h \
- ../src/Stop.h
-CMakeFiles/untitled.dir/src/Interface/Menu.cpp.obj: \
- ../src/Controller.h \
- ../src/Graph.h \
- ../src/Interface/Menu.cpp \
- ../src/Interface/Menu.h \
- ../src/Interface/System.h \
- ../src/Line.h \
- ../src/Stop.h
-CMakeFiles/untitled.dir/src/Interface/OptionsMenu.cpp.obj: \
- ../src/Controller.h \
- ../src/Graph.h \
- ../src/Interface/Menu.h \
- ../src/Interface/OptionsMenu.cpp \
- ../src/Interface/OptionsMenu.h \
- ../src/Interface/System.h \
- ../src/Line.h \
- ../src/Stop.h
 CMakeFiles/untitled.dir/src/Interface/System.cpp.obj: \
  ../src/Controller.h \
  ../src/Graph.h \
@@ -54,11 +29,11 @@ CMakeFiles/untitled.dir/src/Interface/System.cpp.obj: \
  ../src/Interface/System.cpp \
  ../src/Interface/System.h \
  ../src/Line.h \
- ../src/Stop.h
+ ../src/StopEdge.h
 CMakeFiles/untitled.dir/src/Line.cpp.obj: \
  ../src/Line.cpp \
  ../src/Line.h \
- ../src/Stop.h
-CMakeFiles/untitled.dir/src/Stop.cpp.obj: \
- ../src/Stop.cpp \
- ../src/Stop.h
+ ../src/StopEdge.h
+CMakeFiles/untitled.dir/src/StopEdge.cpp.obj: \
+ ../src/StopEdge.cpp \
+ ../src/StopEdge.h

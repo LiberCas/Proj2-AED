@@ -19,8 +19,6 @@ private:
     vector<Line> linesDB;
     Graph graph;
 public:
-    vector<Stop> readEachLineFile0(string code);
-    vector<Stop> readEachLineFile1(string code);
     // Constructors
     /** @brief  Default constructor.*/
     Controller();
@@ -32,6 +30,9 @@ public:
 
     /** @brief  Returns the Airports data base.*/
     vector<Line> getLines();
+    void readStops();
+    void readLines();
+    void extractStopsFromLines();
 
 
     // Finds

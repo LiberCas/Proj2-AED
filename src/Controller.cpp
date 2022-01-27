@@ -11,7 +11,11 @@
 
 
 Controller::Controller() {
-    //------------------------------------------------------------------Stops
+    readStops();
+    readLines();
+}
+
+void Controller::readStops(){
     ifstream stopsFile;
     stopsFile.open("../src/dataset/stops.csv");
     if (stopsFile.fail()) {
@@ -19,102 +23,76 @@ Controller::Controller() {
     } else {
         string line;
         stopsFile >> line;
-        while (!stopsFile.eof()) {
+        stopsFile.ignore();
+        while (!stopsFile.eof() && stopsFile.peek()!='\n') {
             Stop stop;
             stopsFile >> stop;
             this->stopDB.push_back(stop);
         }
+        stopDB.pop_back();
     }
     stopsFile.close();
     this->graph = Graph(stopDB.size());
     for (int i=0;i<stopDB.size();i++){
         graph.addStop(stopDB[i]);
     }
-    //------------------------------------------------------------------Lines
+}
 
+void Controller::readLines() {
     ifstream linesFile;
     linesFile.open("../src/dataset/lines.csv");
     if (linesFile.fail()) {
         cout << "This file doesn't exist!\n";
-    } else {
+    }
+    else {
         string l;
         linesFile >> l;
         linesFile.ignore();
-        while (!linesFile.eof()) {
+        while (!linesFile.eof() && linesFile.peek() != '\n') {
             Line line;
             linesFile >> line;
-            if (line.getCode()=="") break;
-            else if (line.getCode()=="300"||line.getCode()=="301"||line.getCode()=="302"||line.getCode()=="303" ){
-                line.setL0(readEachLineFile0(line.getCode()));
-                for (int i = 0; i<line.getL0().size()-1;i++){
-                    line.getL0()[i].addEdge(Edge(line.getL0()[i+1],haversine(line.getL0()[i].getLatitude(),line.getL0()[i].getLongitude(),line.getL0()[i+1].getLatitude(),line.getL0()[i+1].getLongitude()),line.getCode()));
-                }
-            }
-            else {
-                line.setL0(readEachLineFile0(line.getCode()));
-                for (int i = 0; i<line.getL0().size()-1;i++){
-                    line.getL0()[i].addEdge(Edge(line.getL0()[i+1],haversine(line.getL0()[i].getLatitude(),line.getL0()[i].getLongitude(),line.getL0()[i+1].getLatitude(),line.getL0()[i+1].getLongitude()),line.getCode()));
-                }
-                line.setL1(readEachLineFile1(line.getCode()));
-                for (int i = 0; i<line.getL1().size()-1;i++){
-                    line.getL1()[i].addEdge(Edge(line.getL1()[i+1],haversine(line.getL1()[i].getLatitude(),line.getL1()[i].getLongitude(),line.getL1()[i+1].getLatitude(),line.getL1()[i+1].getLongitude()),line.getCode()));
-                }
-            }
             this->linesDB.push_back(line);
-
         }
+        linesDB.pop_back();
+        linesFile.close();
+        extractStopsFromLines();
     }
-    linesFile.close();
 }
 
-
-
-vector<Stop> Controller::readEachLineFile0(string code) {
-    vector<Stop> res;
-    ifstream linesFile;
-    string filename = "../src/dataset/line_" + code + "_0.csv";
-    linesFile.open(filename);
-    if (linesFile.fail()) {
-        cout << "This file doesn't exist!" ;
-    } else {
-        int i;
-        linesFile >> i;
-        for(int n=0;n<i;n++){
-            string code;
-            linesFile >> code;
-            bool stop = existsStop(code);
-            if(stop){
-                Stop s = findStop(code);
-                res.push_back(s);
+void Controller::extractStopsFromLines(){
+    for(int i=0; i<linesDB.size(); i++){
+        ifstream individLinesFile;
+        string code = linesDB[i].getCode();
+        individLinesFile.open("../src/dataset/line_" + code + "_0.csv");
+        string prevStopCode, nextStopCode;
+        getline(individLinesFile, prevStopCode);
+        getline(individLinesFile, prevStopCode);
+        while(getline(individLinesFile, nextStopCode)){
+            double weight= haversine(findStop(prevStopCode).getLatitude(), findStop(prevStopCode).getLongitude(), findStop(nextStopCode).getLatitude(), findStop(nextStopCode).getLongitude());
+            findStop(prevStopCode).addEdge(Edge(findStop(nextStopCode), weight,code));
+            if(code=="300"||code=="301"||code=="302"||code=="303")
+                findStop(nextStopCode).addEdge(Edge(findStop(prevStopCode),weight,code));
+            linesDB[i].getL0().push_back(findStop(prevStopCode));
+            prevStopCode=nextStopCode;
+        }
+        linesDB[i].getL0().push_back(findStop(prevStopCode));
+        individLinesFile.close();
+        individLinesFile.open("../src/dataset/line_" + code + "_1.csv");
+        if(individLinesFile.peek()!='0') {
+            getline(individLinesFile, prevStopCode);
+            getline(individLinesFile, prevStopCode);
+            while(getline(individLinesFile, nextStopCode)){
+                double weight= haversine(findStop(prevStopCode).getLatitude(), findStop(prevStopCode).getLongitude(), findStop(nextStopCode).getLatitude(), findStop(nextStopCode).getLongitude());
+                findStop(prevStopCode).addEdge(Edge(findStop(nextStopCode),weight,code));
+                linesDB[i].getL1().push_back(findStop(prevStopCode));
+                prevStopCode=nextStopCode;
             }
         }
+        individLinesFile.close();
     }
-    return res;
-
 }
 
-vector<Stop> Controller::readEachLineFile1(string code) {
-    vector<Stop> res;
-    ifstream linesFile;
-    string filename = "../src/dataset/line_" + code + "_1.csv";
-    linesFile.open(filename);
-    if (linesFile.fail()) {
-        cout  << "This file doesn't exist!"<< endl ;
-    } else {
-        int i;
-        linesFile >> i;
-        for(int n=0;n<i;n++){
-            string code;
-            linesFile >> code;
-            bool stop = existsStop(code);
-            if(stop){
-                Stop s = findStop(code);
-                res.push_back(s);
-            }
-        }
-    }
-    return res;
-}
+
 Controller::~Controller(){
     stopDB.clear();
     linesDB.clear();
@@ -260,3 +238,29 @@ void Controller::writeFiles() {
 }
 
 */
+
+/*else if (line.getCode() == "300" || line.getCode() == "301" || line.getCode() == "302" ||
+                 line.getCode() == "303") {
+            line.setL0(readEachLineFile0(line.getCode()));
+            for (int i = 0; i < line.getL0().size() - 1; i++) {
+                line.getL0()[i].addEdge(Edge(line.getL0()[i + 1],
+                                             haversine(line.getL0()[i].getLatitude(), line.getL0()[i].getLongitude(),
+                                                       line.getL0()[i + 1].getLatitude(),
+                                                       line.getL0()[i + 1].getLongitude()), line.getCode()));
+            }
+        }
+ * line.setL0(readEachLineFile0(line.getCode()));
+            for (int i = 0; i < line.getL0().size() - 1; i++) {
+                line.getL0()[i].addEdge(Edge(line.getL0()[i + 1],
+                                             haversine(line.getL0()[i].getLatitude(), line.getL0()[i].getLongitude(),
+                                                       line.getL0()[i + 1].getLatitude(),
+                                                       line.getL0()[i + 1].getLongitude()), line.getCode()));
+            }
+            line.setL1(readEachLineFile1(line.getCode()));
+            for (int i = 0; i < line.getL1().size() - 1; i++) {
+                line.getL1()[i].addEdge(Edge(line.getL1()[i + 1],
+                                             haversine(line.getL1()[i].getLatitude(), line.getL1()[i].getLongitude(),
+                                                       line.getL1()[i + 1].getLatitude(),
+                                                       line.getL1()[i + 1].getLongitude()), line.getCode()));
+            }
+ */
