@@ -94,12 +94,16 @@ void Stop::addEdge(Edge edge) {
     adj.push_back(edge);
 }
 
-void Stop::setDistance(int distance) {
+void Stop::setDistance(double distance) {
     this->distance=distance;
 }
 
-void Stop::setVisited(bool visites) {
-    this->visited=visites;
+void Stop::setVisited(bool visited) {
+    this->visited=visited;
+}
+
+void Stop::setPred(string pred){
+    this->pred=pred;
 }
 
 int Stop::getDistance() const {

@@ -20,8 +20,9 @@ private:
     float latitude;
     float longitude;
     list<Edge> adj;
-    int distance;
+    double distance;
     bool visited;   // As the node been visited on a search?
+    string pred;
 
 public:
     Stop();
@@ -36,8 +37,9 @@ public:
     bool getVisited() const;
     const list<Edge> &getAdj() const;
     void setCode(const string &code);
-    void setDistance(int distance);
-    void setVisited(bool visites);
+    void setDistance(double distance);
+    void setVisited(bool visited);
+    void setPred(string pred);
     void setName(const string &name);
     void setZone(const string &zone);
     void setLatitude(float latitude);

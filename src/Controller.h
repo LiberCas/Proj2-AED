@@ -13,8 +13,6 @@
 
 class Controller{
 private:
-    Controller(Graph graph1);
-
     vector<Stop> stopDB; //!< Airports data base
     vector<Line> linesDB;
     Graph graph;
@@ -24,6 +22,7 @@ public:
     Controller();
     /** @brief  Default destructor.*/
     ~Controller();
+    Graph& getGraph() {return graph;}
     // Gets
     /** @brief  Returns the Airports data base.*/
     vector<Stop> getStops();

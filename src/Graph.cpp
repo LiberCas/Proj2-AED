@@ -145,28 +145,32 @@ int Graph::getIndexStop(string code) {
     }
     return -1;
 }
-int Graph::dijkstra_distance(Stop a, Stop b) {
+
+double Graph::dijkstra_distance(Stop& a, Stop& b) {
     if (a==b) return 0;
-    for(int i = 1; i <= n; i++) {
+    for(int i = 0; i <= n; i++) {
         stops[i].setDistance(INT_MAX);
         stops[i].setVisited(false);
     }
     a.setDistance(0);
-    MinHeap<string,int> q(n,NULL);
-    for (int i = 1; i<=n;i++){
-        q.insert(stops[i].getCode(),stops[i].getDistance());
+    a.setPred(a.getCode());
+    MinHeap<string,double> q(n,NULL);
+    for (int i = 0; i<=n;i++){
+        if(!(stops[i] == b))
+            q.insert(stops[i].getCode(),stops[i].getDistance());
     }
     while (q.getSize()!=0){
         string u = q.removeMin();
-        int x= getIndexStop(u);
+        int x = getIndexStop(u);
         stops[x].setVisited(true);
         for (auto & edge : stops[x].getAdj()){
-            if ( (stops[x].getDistance() + edge.getWeight() < edge.getDest().getDistance()) && q.hasKey(edge.getDest().getCode())  ){
-                stops[getIndexStop(edge.getDest().getCode())].setDistance(stops[x].getDistance()+edge.getWeight());
-                q.decreaseKey(edge.getDest().getCode(),stops[getIndexStop(edge.getDest().getCode())].getDistance());
+            double tempDist = stops[x].getDistance() + edge.getWeight();
+            if ((tempDist < edge.getDest().getDistance()) && q.hasKey(edge.getDest().getCode())){
+                stops[getIndexStop(edge.getDest().getCode())].setDistance(tempDist);
+                stops[getIndexStop(edge.getDest().getCode())].setPred(u);
+                q.decreaseKey(edge.getDest().getCode(),tempDist);
             }
         }
-
     }
     if (b.getDistance()==INT_MAX) return -1;
     return b.getDistance();

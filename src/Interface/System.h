@@ -15,6 +15,7 @@ private:
     Controller controller;
 public:
     System();
+    Controller& getController() {return controller;}
     static void clearScreen();
 };
 #endif //PROJ1_SYSTEM_H

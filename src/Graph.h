@@ -38,7 +38,7 @@ public:
     void dfsTopo(Stop& v, list<Stop>& order);
     void bfsDist(Stop v);
 
-    int dijkstra_distance (Stop a, Stop b);
+   double dijkstra_distance (Stop& a, Stop& b);
     int getIndexStop(string code);
 
 

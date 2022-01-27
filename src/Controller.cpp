@@ -32,7 +32,7 @@ void Controller::readStops(){
         stopDB.pop_back();
     }
     stopsFile.close();
-    this->graph = Graph(stopDB.size());
+    this->graph = Graph(stopDB.size(), true);
     for (int i=0;i<stopDB.size();i++){
         graph.addStop(stopDB[i]);
     }
