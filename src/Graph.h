@@ -28,9 +28,10 @@ public:
 
     // Depth-First Search: example implementation
     void dfs(Stop& v);
+    vector<int> getPath(Stop& a, Stop& b);
 
     // Breadth-First Search: example implementation
-    void bfs(Stop& v);
+    vector<int> bfs(Stop& origin, Stop& dest);
 
     // ----- Functions to implement in this class -----
     void resetNodes();

@@ -19,7 +19,6 @@ void Graph::addStop(Stop &stop) {
 // Add edge from source to destination with a certain weight
 
 vector<int> Graph::dijkstra_distance(Stop& a, Stop& b) {
-    vector<int> res;
     if (a==b) return {};
     resetNodes();
     a.setDistance(0);
@@ -39,6 +38,11 @@ vector<int> Graph::dijkstra_distance(Stop& a, Stop& b) {
             }
         }
     }
+    return getPath(a, b);
+}
+
+vector<int> Graph::getPath(Stop& a, Stop& b){
+    vector<int> res;
     res.push_back(b.getIndex());
     int i = b.getPred();
     while (i!=a.getIndex()){
@@ -51,7 +55,7 @@ vector<int> Graph::dijkstra_distance(Stop& a, Stop& b) {
 }
 
 void Graph::resetNodes(){
-    for(int i = 0; i <= n; i++) {
+    for(int i = 0; i < n; i++) {
         stops[i].setDistance(1000);
         stops[i].setVisited(false);
         stops[i].setPred(i);
@@ -64,7 +68,7 @@ Stop& Graph::getDest(Edge edge){
 }
 
 int Graph::getIndexStop(string code) {
-    for(int i=0;i<=n;i++){
+    for(int i=0;i<n;i++){
         if(stops[i].getCode()==code){
             return i;
         }
@@ -93,22 +97,24 @@ void Graph::addEdge(int src, int dest, double weight = 1.0, string code=0){
     stops.at(src).addEdge(dest, weight, code);
 }
 
-void Graph::bfs(Stop& x) {
+vector<int> Graph::bfs(Stop& origin, Stop& dest) {
     resetNodes();
-    for (int v=1; v<=n; v++) stops[v].setVisited(false);
     queue<Stop> q; // queue of unvisited nodes
-    q.push(x);
-    x.setVisited(true);
+    q.push(origin);
+    origin.setVisited(true);
     while (!q.empty()) { // while there are still unvisited nodes
-        Stop u = q.front(); q.pop();
+        Stop u = q.front();
+        q.pop();
         for (auto e : u.getAdj()) {
-            Stop w = e.getDest();
-            if (!w.getVisited()) {
-                q.push(w);
-                w.setVisited(true);
+            int w = e.getDest();
+            if (!stops[w].getVisited()) {
+                q.push(stops[w]);
+                stops[w].setVisited(true);
+                stops[w].setPred(u.getIndex());
             }
         }
     }
+    return getPath(origin, dest);
 }
 
 

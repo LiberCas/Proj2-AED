@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED
+# Install script for directory: C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/lib/googletest-master/cmake_install.cmake")
+  include("C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/cmake-build-debug/lib/googletest-master/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
