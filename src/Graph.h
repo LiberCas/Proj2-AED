@@ -33,6 +33,7 @@ public:
     void bfs(Stop& v);
 
     // ----- Functions to implement in this class -----
+    void resetNodes();
     int connectedComponents();
     list<Stop> topologicalSorting();
     int distance(Stop a, Stop b);

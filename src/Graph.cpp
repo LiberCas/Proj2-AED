@@ -21,12 +21,8 @@ void Graph::addStop(Stop &stop) {
 vector<int> Graph::dijkstra_distance(Stop& a, Stop& b) {
     vector<int> res;
     if (a==b) return {};
-    for(int i = 0; i <= n; i++) {
-        stops[i].setDistance(1000);
-        stops[i].setVisited(false);
-    }
+    resetNodes();
     a.setDistance(0);
-    a.setPred(a.getIndex());
     MinHeap<int,double> q(n,NULL);
     for (int i = 0; i<=n;i++){
         q.insert(i,stops[i].getDistance());
@@ -50,9 +46,16 @@ vector<int> Graph::dijkstra_distance(Stop& a, Stop& b) {
         i = getStop(i).getPred();
     }
     res.insert(res.begin(), a.getIndex());
-
     if (b.getDistance()==INT_MAX) return {};
     return res;
+}
+
+void Graph::resetNodes(){
+    for(int i = 0; i <= n; i++) {
+        stops[i].setDistance(1000);
+        stops[i].setVisited(false);
+        stops[i].setPred(i);
+    }
 }
 
 Stop& Graph::getDest(Edge edge){
@@ -90,21 +93,8 @@ void Graph::addEdge(int src, int dest, double weight = 1.0, string code=0){
     stops.at(src).addEdge(dest, weight, code);
 }
 
-
-
-/*
-// Depth-First Search: example implementation
-void Graph::dfs(Stop& w) {
-    w.setVisited(true) ;
-    for (auto &e : w.getAdj()) {
-        Stop w = e.getDest();
-        if (w.getVisited())
-            dfs(w);
-    }
-}
-
-// Depth-First Search: example implementation
 void Graph::bfs(Stop& x) {
+    resetNodes();
     for (int v=1; v<=n; v++) stops[v].setVisited(false);
     queue<Stop> q; // queue of unvisited nodes
     q.push(x);
@@ -120,6 +110,21 @@ void Graph::bfs(Stop& x) {
         }
     }
 }
+
+
+/*
+// Depth-First Search: example implementation
+void Graph::dfs(Stop& w) {
+    w.setVisited(true) ;
+    for (auto &e : w.getAdj()) {
+        Stop w = e.getDest();
+        if (w.getVisited())
+            dfs(w);
+    }
+}
+
+// Depth-First Search: example implementation
+
 
 
 
