@@ -79,4 +79,4 @@ public:
 
 };
 
-#endif //STOP_&_EDGE_H
+#endif //STOPEDGE_H

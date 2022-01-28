@@ -87,6 +87,7 @@ Stop& Graph::getStop(string code){
         if(stops.at(i).getCode() == code)
             return stops.at(i);
     }
+    return stops.at(0);
 }
 
 vector<Stop>& Graph::getStops(){

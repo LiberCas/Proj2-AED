@@ -36,21 +36,21 @@ bool DirectionsMenu::searchByLine() {
     if(orientation == 2)
         return false;
     vector<string> stopsOptions;
-    vector<Stop> searchLine;
+    vector<int> searchLine;
     if(orientation)
         searchLine = controller->findLine(lineId).getL1();
     else
         searchLine = controller->findLine(lineId).getL0();
-    for(auto stop : searchLine)
-        stopsOptions.push_back(stop.getName());
+    for(auto stopIdx : searchLine)
+        stopsOptions.push_back(controller->getGraph().getStop(stopIdx).getName());
     stopsOptions.push_back("Go Back");
-    option = printOptionsMenu(stopsOptions, "Select Stop&Edge");
+    option = printOptionsMenu(stopsOptions, "Select Stop");
     if(option >= searchLine.size())
         return false;
     if(currentInput == 'O')
-        origin = controller->findStop(searchLine.at(option).getCode());
+        origin = controller->findStop(controller->getGraph().getStop(searchLine.at(option)).getCode());
     else
-        destination = controller->findStop(searchLine.at(option).getCode());
+        destination = controller->findStop(controller->getGraph().getStop(searchLine.at(option)).getCode());
     return true;
 }
 
@@ -64,7 +64,7 @@ void DirectionsMenu::nowGetting(char option) {
 
 void DirectionsMenu::showDirections() {
     string directions = controller->getDirections(origin, destination);
-    singleInputScreen("Directions:\n"+ directions + "\nType 'B' to go back");
+    singleInputScreen("Directions:\n"+ directions);
 }
 
 bool DirectionsMenu::insertCoordinates() {

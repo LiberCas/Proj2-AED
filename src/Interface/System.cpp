@@ -16,7 +16,7 @@ void System::clearScreen() {
 
 System::System() {
     controller = Controller();
-    /*
+
     Menu startMenu = Menu(controller);
     OptionsMenu optionsMenu = OptionsMenu(controller);
     DirectionsMenu directionsMenu = DirectionsMenu(controller);
@@ -61,5 +61,5 @@ System::System() {
         if(initOption == 2) break;
 
     }
-     */
+
 }
