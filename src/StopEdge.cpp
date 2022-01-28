@@ -71,6 +71,12 @@ void Stop::setLongitude(float longitude) {
     Stop::longitude = longitude;
 }
 
+bool Stop::isInAdj(Stop &stop) {
+    for(auto& e :adj){
+        if(e.getDest()==stop.getIndex()) return true;
+    }
+    return false;
+}
 istream & operator>>(istream &is, Stop &stop) {
     char temp[256];
     if(!is.getline(temp, 100, ',')){

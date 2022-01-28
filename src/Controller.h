@@ -34,6 +34,7 @@ public:
     void extractStopsFromLines();
     int getIndexStop(string code);
     vector<Stop>& getStopDB();
+    void addEdges();
 
 
     // Finds
