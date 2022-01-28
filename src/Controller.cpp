@@ -31,7 +31,7 @@ Controller::Controller() {
         graph.addStop(stopDB[i]);
     }
     //------------------------------------------------------------------Lines
-
+    ///TODO Erro aqui
     ifstream linesFile;
     linesFile.open("../src/dataset/lines.csv");
     if (linesFile.fail()) {
@@ -212,6 +212,10 @@ string Controller::getDirections(Stop origin, Stop destination) {
     double rad = 6371;
     double c = 2 * asin(sqrt(a));
     return rad * c;
+}
+
+void Controller::writeFiles() {
+
 }
 
 

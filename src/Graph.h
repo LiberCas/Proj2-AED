@@ -7,7 +7,7 @@
 #include <list>
 #include <queue>
 #include <iostream>
-#include "Stop&Edge.h"
+#include "StopEdge.h"
 
 using namespace std;
 

@@ -7,7 +7,7 @@
 
 #include "string"
 #include "vector"
-#include "Stop&Edge.h"
+#include "StopEdge.h"
 
 using namespace std;
 

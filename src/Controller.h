@@ -65,7 +65,7 @@ public:
     /** @brief  Writes the .txt files upon Save&Quit*/
     void writeFiles();
 
-    void createGraphLines();
+    //void createGraphLines();
     static double haversine(double lat1, double lon1,
                             double lat2, double lon2);
 
