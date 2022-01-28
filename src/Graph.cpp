@@ -92,7 +92,7 @@ vector<Stop>& Graph::getStops(){
 void Graph::addEdge(int src, int dest, double weight = 1.0, string code=0){
     stops.at(src).addEdge(dest, weight, code);
 }
-
+/*
 void Graph::bfs(Stop& x) {
     resetNodes();
     for (int v=1; v<=n; v++) stops[v].setVisited(false);
@@ -111,7 +111,7 @@ void Graph::bfs(Stop& x) {
     }
 }
 
-
+*/
 /*
 // Depth-First Search: example implementation
 void Graph::dfs(Stop& w) {
