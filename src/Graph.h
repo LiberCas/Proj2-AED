@@ -45,6 +45,7 @@ public:
     Stop& getStop(string code);
     vector<Stop>& getStops();
     int getIndexStop(string code);
+    void putLinesInStations();
 
 
 };

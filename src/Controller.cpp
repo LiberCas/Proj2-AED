@@ -75,8 +75,6 @@ int Controller::getIndexStop(string code) {
 }
 
 void Controller::extractStopsFromLines(){
-    ofstream resLines;
-    resLines.open("../src/dataset/paths.csv");
     for(int i=0; i<linesDB.size(); i++){
         ifstream individLinesFile;
         string code = linesDB[i].getCode();
@@ -89,7 +87,6 @@ void Controller::extractStopsFromLines(){
             int nextStop = getIndexStop(nextStopCode);
             double weight=haversine(graph.getStops()[prevStop].getLatitude(), graph.getStops()[prevStop].getLongitude(), graph.getStops()[nextStop].getLatitude(), graph.getStops()[nextStop].getLongitude());
             graph.addEdge(prevStop,nextStop,weight, code);
-            resLines << prevStop << "," << nextStop << "," << code << "\n";
             linesDB.at(i).getL0().push_back(prevStop);
             prevStop=nextStop;
         }
@@ -104,7 +101,6 @@ void Controller::extractStopsFromLines(){
                 int nextStop = getIndexStop(nextStopCode);
                 double weight= haversine(graph.getStops()[prevStop].getLatitude(), graph.getStops()[prevStop].getLongitude(), graph.getStops()[nextStop].getLatitude(), graph.getStops()[nextStop].getLongitude());
                 graph.addEdge(prevStop,nextStop,weight, code);
-                resLines << prevStop << "," << nextStop << "," << code << "\n";
                 linesDB.at(i).getL1().push_back(prevStop);
                 prevStop=nextStop;
             }
@@ -112,7 +108,6 @@ void Controller::extractStopsFromLines(){
         }
         individLinesFile.close();
     }
-    resLines.close();
 }
 
 

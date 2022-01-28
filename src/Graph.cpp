@@ -117,7 +117,6 @@ vector<int> Graph::bfs(Stop& origin, Stop& dest) {
     return getPath(origin, dest);
 }
 
-
 /*
 // Depth-First Search: example implementation
 void Graph::dfs(Stop& w) {

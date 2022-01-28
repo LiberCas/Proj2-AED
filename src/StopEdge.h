@@ -21,6 +21,7 @@ private:
     float latitude;
     float longitude;
     list<Edge> adj;
+    list<int> lines;
     double distance;
     bool visited;   // As the node been visited on a search?
     int pred;
