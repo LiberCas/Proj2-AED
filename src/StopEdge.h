@@ -54,7 +54,7 @@ public:
     friend bool operator==(const Stop& s1, const Stop& s2){
         return (s1.code==s2.code);
     }
-
+    bool isInAdj(Stop& stop);
     int getIndex() const;
     void addEdge(int dest, double weight, string code);
 };

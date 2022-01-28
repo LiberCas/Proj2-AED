@@ -13,6 +13,7 @@
 Controller::Controller() {
     readStops();
     readLines();
+    addEdges();
 }
 
 void Controller::readStops(){
@@ -141,7 +142,17 @@ Line& Controller::findLine(string code) {
     Line* nill=NULL;
     return *nill;
 }
-
+void Controller::addEdges() {
+    double weight;
+    for(int i=0;i<graph.getStops().size()-1;i++){
+        for(int j=1;j<graph.getStops().size();j++){
+            weight=haversine(graph.getStops()[i].getLatitude(), graph.getStops()[i].getLongitude(), graph.getStops()[j].getLatitude(), graph.getStops()[j].getLongitude());
+            if(weight<=0.01 && !graph.getStops()[i].isInAdj(graph.getStops()[j]) && graph.getStops()[i].getIndex()!=graph.getStops()[j].getIndex()){
+                    graph.addEdge(graph.getStops()[i].getIndex(),graph.getStops()[j].getIndex(),weight, "");
+            }
+        }
+    }
+}
 
 
 bool Controller::existsStop(string code) {
