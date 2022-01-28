@@ -90,8 +90,12 @@ Stop::Stop(int latitude, int longitude) {
     this->longitude =longitude;
 }
 
-void Stop::addEdge(Edge edge) {
+void Stop::addEdge(Edge& edge) {
     adj.push_back(edge);
+}
+
+void Stop::addEdge(int dest, double weight, string code){
+    adj.push_back(Edge(dest, weight, code));
 }
 
 void Stop::setDistance(double distance) {
@@ -102,11 +106,11 @@ void Stop::setVisited(bool visited) {
     this->visited=visited;
 }
 
-void Stop::setPred(string pred){
+void Stop::setPred(int pred){
     this->pred=pred;
 }
 
-int Stop::getDistance() const {
+double Stop::getDistance() const {
     return distance;
 }
 
@@ -114,20 +118,28 @@ bool Stop::getVisited() const {
     return visited;
 }
 
-const list<struct Edge> & Stop::getAdj() {
+list<Edge> Stop::getAdj() {
     return adj;
+}
+
+void Stop::setIndex(int index) {
+    Stop::index = index;
+}
+
+int Stop::getIndex() const {
+    return index;
 }
 
 //----------------------------------------------------------------------------------------------
 
 
-Edge::Edge(Stop& dest, double weight, string lineCode) {
+Edge::Edge(int dest, double weight, string lineCode) {
     this->weight=weight;
     this->lineCode=lineCode;
     this->dest=dest;
 }
 
- Stop& Edge::getDest() {
+int Edge::getDest() {
     return dest;
 }
 
@@ -135,11 +147,11 @@ string Edge::getLineCode() {
     return lineCode;
 }
 
-int Edge::getWeight() const {
+double Edge::getWeight() const {
     return weight;
 }
 
-void Edge::setDest(Stop&  dest) {
+void Edge::setDest(int  dest) {
     this->dest = dest;
 }
 
@@ -147,6 +159,6 @@ void Edge::setLineCode(string lineCode) {
     this->lineCode=lineCode;
 }
 
-void Edge::setWeight(int weight) {
+void Edge::setWeight(double weight) {
     this->weight=weight;
 }

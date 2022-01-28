@@ -25,7 +25,7 @@ public:
     Graph& getGraph() {return graph;}
     // Gets
     /** @brief  Returns the Airports data base.*/
-    vector<Stop> getStops();
+    vector<Stop>& getStops();
 
     /** @brief  Returns the Airports data base.*/
     vector<Line> getLines();

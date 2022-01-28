@@ -6,6 +6,7 @@
 #define _MINHEAP_H_
 
 #include <vector>
+#include <string>
 #include <unordered_map>
 
 #define LEFT(i) (2*(i))

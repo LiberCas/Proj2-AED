@@ -16,6 +16,7 @@ Controller::Controller() {
 }
 
 void Controller::readStops(){
+    graph = Graph(2487, true);
     ifstream stopsFile;
     stopsFile.open("../src/dataset/stops.csv");
     if (stopsFile.fail()) {
@@ -24,18 +25,23 @@ void Controller::readStops(){
         string line;
         stopsFile >> line;
         stopsFile.ignore();
+        int index=0;
         while (!stopsFile.eof() && stopsFile.peek()!='\n') {
             Stop stop;
             stopsFile >> stop;
+            stop.setIndex(index);
             this->stopDB.push_back(stop);
+            graph.getStops().push_back(stop);
+            index++;
         }
         stopDB.pop_back();
     }
     stopsFile.close();
-    this->graph = Graph(stopDB.size(), true);
+    /*
     for (int i=0;i<stopDB.size();i++){
-        graph.addStop(stopDB[i]);
+        graph.addStop(stopDB.at(i));
     }
+     */
 }
 
 void Controller::readLines() {
@@ -79,12 +85,12 @@ void Controller::extractStopsFromLines(){
         int prevStop = getIndexStop(prevStopCode);
         while(getline(individLinesFile, nextStopCode)){
             int nextStop = getIndexStop(nextStopCode);
-            double weight=haversine(stopDB[prevStop].getLatitude(), stopDB[prevStop].getLongitude(), stopDB[nextStop].getLatitude(), stopDB[nextStop].getLongitude());
-            stopDB[prevStop].addEdge(Edge(stopDB[nextStop], weight,code));
-            linesDB[i].getL0().push_back(prevStop);
+            double weight=haversine(graph.getStops()[prevStop].getLatitude(), graph.getStops()[prevStop].getLongitude(), graph.getStops()[nextStop].getLatitude(), graph.getStops()[nextStop].getLongitude());
+            graph.addEdge(prevStop,nextStop,weight, code);
+            linesDB.at(i).getL0().push_back(prevStop);
             prevStop=nextStop;
         }
-        linesDB[i].getL0().push_back(prevStop);
+        linesDB.at(i).getL0().push_back(prevStop);
         individLinesFile.close();
         individLinesFile.open("../src/dataset/line_" + code + "_1.csv");
         if(individLinesFile.peek()!='0') {
@@ -93,12 +99,12 @@ void Controller::extractStopsFromLines(){
             prevStop = getIndexStop(prevStopCode);
             while(getline(individLinesFile, nextStopCode)){
                 int nextStop = getIndexStop(nextStopCode);
-                double weight= haversine(stopDB[prevStop].getLatitude(), stopDB[prevStop].getLongitude(), stopDB[nextStop].getLatitude(), stopDB[nextStop].getLongitude());
-                stopDB[prevStop].addEdge(Edge(stopDB[nextStop],weight,code));
-                linesDB[i].getL1().push_back(prevStop);
+                double weight= haversine(graph.getStops()[prevStop].getLatitude(), graph.getStops()[prevStop].getLongitude(), graph.getStops()[nextStop].getLatitude(), graph.getStops()[nextStop].getLongitude());
+                graph.addEdge(prevStop,nextStop,weight, code);
+                linesDB.at(i).getL1().push_back(prevStop);
                 prevStop=nextStop;
             }
-            linesDB[i].getL1().push_back(prevStop);
+            linesDB.at(i).getL1().push_back(prevStop);
         }
         individLinesFile.close();
     }
@@ -114,7 +120,7 @@ vector<Line> Controller::getLines() {
     return linesDB;
 }
 
-vector<Stop> Controller::getStops() {
+vector<Stop>& Controller::getStops() {
     return stopDB;
 }
 

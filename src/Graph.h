@@ -20,9 +20,11 @@ public:
     Graph();
     // Constructor: nr nodes and direction (default: undirected)
     Graph(int nodes, bool dir = false);
+    Stop& getDest(Edge edge);
     void addStop(Stop& stop);
+    double dijkstra_distance (Stop& a, Stop& b);
     // Add edge from source to destination with a certain weight
-    void addEdge(int src, Stop& dest, int weight = 1, string code=0);
+    void addEdge(int src, int dest, double weight, string code);
 
     // Depth-First Search: example implementation
     void dfs(Stop& v);
@@ -38,7 +40,8 @@ public:
     void dfsTopo(Stop& v, list<Stop>& order);
     void bfsDist(Stop v);
 
-   double dijkstra_distance (Stop& a, Stop& b);
+    Stop& getStop(string code);
+    vector<Stop>& getStops();
     int getIndexStop(string code);
 
 
