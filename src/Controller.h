@@ -34,7 +34,7 @@ public:
     void extractStopsFromLines();
     int getIndexStop(string code);
     vector<Stop>& getStopDB();
-    void addEdges();
+    void addEdgesInWalkingDistance(double walkingDistance=0.1);
 
 
     // Finds
@@ -69,8 +69,7 @@ public:
     void writeFiles();
 
     void createGraphLines();
-    static double haversine(double lat1, double lon1,
-                            double lat2, double lon2);
+    static double haversine(double lat1, double lon1,double lat2, double lon2);
 
     string getDirections(Stop origin, Stop destination);
 };

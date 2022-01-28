@@ -23,29 +23,14 @@ public:
     Stop& getDest(Edge edge);
     void addStop(Stop& stop);
     vector<int> dijkstra_distance (Stop& a, Stop& b);
-    // Add edge from source to destination with a certain weight
+    vector<int> dijkstra_zones (Stop& a, Stop& b);
     void addEdge(int src, int dest, double weight, string code);
-
-    // Depth-First Search: example implementation
-    void dfs(Stop& v);
     vector<int> getPath(Stop& a, Stop& b);
-
-    // Breadth-First Search: example implementation
     vector<int> bfs(Stop& origin, Stop& dest);
-
-    // ----- Functions to implement in this class -----
-    void resetNodes();
-    int connectedComponents();
-    list<Stop> topologicalSorting();
-    int distance(Stop a, Stop b);
-    void visitando(Stop& v);
-    void dfsTopo(Stop& v, list<Stop>& order);
-    void bfsDist(Stop v);
+    void resetNodes(int dist);
     Stop& getStop(int index);
     Stop& getStop(string code);
     vector<Stop>& getStops();
-    int getIndexStop(string code);
-    void putLinesInStations();
 
 
 };

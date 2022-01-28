@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "lib/libgmockd.a"
+			"path" : "lib/libgtest_maind.a"
 		}
 	],
 	"backtrace" : 3,
@@ -23,7 +23,7 @@
 		"files" : 
 		[
 			"lib/googletest-master/googletest/cmake/internal_utils.cmake",
-			"lib/googletest-master/googlemock/CMakeLists.txt"
+			"lib/googletest-master/googletest/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -33,7 +33,7 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 97,
+				"line" : 128,
 				"parent" : 0
 			},
 			{
@@ -51,7 +51,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 119,
+				"line" : 146,
 				"parent" : 0
 			},
 			{
@@ -63,13 +63,13 @@
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 98,
+				"line" : 141,
 				"parent" : 0
 			},
 			{
 				"command" : 6,
 				"file" : 1,
-				"line" : 75,
+				"line" : 116,
 				"parent" : 0
 			},
 			{
@@ -99,21 +99,13 @@
 			[
 				{
 					"backtrace" : 7,
-					"path" : "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/lib/googletest-master/googlemock/include"
-				},
-				{
-					"backtrace" : 7,
-					"path" : "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/lib/googletest-master/googlemock"
+					"isSystem" : true,
+					"path" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/lib/googletest-master/googletest/include"
 				},
 				{
 					"backtrace" : 7,
 					"isSystem" : true,
-					"path" : "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/lib/googletest-master/googletest/include"
-				},
-				{
-					"backtrace" : 7,
-					"isSystem" : true,
-					"path" : "C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/lib/googletest-master/googletest"
+					"path" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/lib/googletest-master/googletest"
 				}
 			],
 			"language" : "CXX",
@@ -138,7 +130,7 @@
 			"id" : "gtest::@ccedbc95f081fc42d06b"
 		}
 	],
-	"id" : "gmock::@7e3384afdb8f59c86a5a",
+	"id" : "gtest_main::@ccedbc95f081fc42d06b",
 	"install" : 
 	{
 		"destinations" : 
@@ -153,12 +145,12 @@
 			"path" : "C:/Program Files (x86)/untitled"
 		}
 	},
-	"name" : "gmock",
-	"nameOnDisk" : "libgmockd.a",
+	"name" : "gtest_main",
+	"nameOnDisk" : "libgtest_maind.a",
 	"paths" : 
 	{
-		"build" : "lib/googletest-master/googlemock",
-		"source" : "lib/googletest-master/googlemock"
+		"build" : "lib/googletest-master/googletest",
+		"source" : "lib/googletest-master/googletest"
 	},
 	"sourceGroups" : 
 	[
@@ -175,7 +167,7 @@
 		{
 			"backtrace" : 3,
 			"compileGroupIndex" : 0,
-			"path" : "lib/googletest-master/googlemock/src/gmock-all.cc",
+			"path" : "lib/googletest-master/googletest/src/gtest_main.cc",
 			"sourceGroupIndex" : 0
 		}
 	],
