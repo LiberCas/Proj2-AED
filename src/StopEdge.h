@@ -35,6 +35,7 @@ public:
     const string &getZone() const;
     float getLatitude() const;
     float getLongitude() const;
+    int getPred( ) const    ;
     double getDistance()const;
     bool getVisited() const;
     list<Edge> getAdj();

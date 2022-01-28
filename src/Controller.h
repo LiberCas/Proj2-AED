@@ -33,6 +33,7 @@ public:
     void readLines();
     void extractStopsFromLines();
     int getIndexStop(string code);
+    vector<Stop>& getStopDB();
 
 
     // Finds

@@ -18,10 +18,9 @@ void Graph::addStop(Stop &stop) {
 }
 // Add edge from source to destination with a certain weight
 
-double Graph::dijkstra_distance(Stop& a, Stop& b) {
+vector<int> Graph::dijkstra_distance(Stop& a, Stop& b) {
     vector<int> res;
-    res.push_back(a.getIndex());
-    if (a==b) return 0;
+    if (a==b) return {};
     for(int i = 0; i <= n; i++) {
         stops[i].setDistance(1000);
         stops[i].setVisited(false);
@@ -40,13 +39,20 @@ double Graph::dijkstra_distance(Stop& a, Stop& b) {
             if ((tempDist < getDest(edge).getDistance()) && q.hasKey(edge.getDest())){
                 stops[getDest(edge).getIndex()].setDistance(tempDist);
                 stops[getDest(edge).getIndex()].setPred(u);
-                res.push_back(stops[getDest(edge).getIndex()].getIndex());
                 q.decreaseKey(getDest(edge).getIndex(),tempDist);
             }
         }
     }
-    if (b.getDistance()==INT_MAX) return -1;
-    return b.getDistance();
+    res.push_back(b.getIndex());
+    int i = b.getPred();
+    while (i!=a.getIndex()){
+        res.insert(res.begin(),i);
+        i = getStop(i).getPred();
+    }
+    res.insert(res.begin(), a.getIndex());
+
+    if (b.getDistance()==INT_MAX) return {};
+    return res;
 }
 
 Stop& Graph::getDest(Edge edge){
@@ -63,6 +69,12 @@ int Graph::getIndexStop(string code) {
     return -1;
 }
 
+Stop &Graph::getStop(int index) {
+    for(int i=0;i<n;i++){
+        if(stops.at(i).getIndex() == index)
+            return stops.at(i);
+    }
+}
 Stop& Graph::getStop(string code){
     for(int i=0;i<n;i++){
         if(stops.at(i).getCode() == code)

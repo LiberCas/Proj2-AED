@@ -6,43 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/main.cpp
-iostream
--
-src/Interface/System.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Interface/System.h
-
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Controller.cpp
-Controller.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Controller.h
-iostream
--
-iomanip
--
-string
--
-fstream
--
-cmath
--
-
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Controller.h
-Line.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Line.h
+C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Graph.cpp
 Graph.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Graph.h
-vector
--
-string
--
-
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Graph.cpp
-Graph.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Graph.h
+C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Graph.h
 minHeap.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/minHeap.h
+C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/minHeap.h
 
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Graph.h
+C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/Graph.h
 vector
 -
 list
@@ -52,61 +22,15 @@ queue
 iostream
 -
 StopEdge.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/StopEdge.h
+C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/StopEdge.h
 
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Interface/DirectionsMenu.h
-Menu.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Interface/Menu.h
-
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Interface/Menu.h
-string
--
-vector
--
-System.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Interface/System.h
-../Controller.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Controller.h
-
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Interface/OptionsMenu.h
-Menu.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Interface/Menu.h
-
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Interface/System.cpp
-System.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Interface/System.h
-OptionsMenu.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Interface/OptionsMenu.h
-DirectionsMenu.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Interface/DirectionsMenu.h
-string
--
-iostream
--
-
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Interface/System.h
-string
--
-Menu.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Interface/Menu.h
-../Controller.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Controller.h
-
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/Line.h
-string
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/string
-vector
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/vector
-StopEdge.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/StopEdge.h
-
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/StopEdge.h
+C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/StopEdge.h
 string
 -
 list
 -
 
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/src/minHeap.h
+C:/Users/35196/OneDrive/Documentos/GitHub/Proj2-AED/src/minHeap.h
 vector
 -
 string

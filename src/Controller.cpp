@@ -187,7 +187,9 @@ string Controller::getDirections(Stop origin, Stop destination) {
 }
 
 
-
+vector<Stop> &Controller::getStopDB() {
+    return this->stopDB;
+}
 
  double Controller::haversine(double lat1, double lon1, double lat2, double lon2) {
     // distance between latitudes

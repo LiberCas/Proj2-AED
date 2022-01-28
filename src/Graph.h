@@ -22,7 +22,7 @@ public:
     Graph(int nodes, bool dir = false);
     Stop& getDest(Edge edge);
     void addStop(Stop& stop);
-    double dijkstra_distance (Stop& a, Stop& b);
+    vector<int> dijkstra_distance (Stop& a, Stop& b);
     // Add edge from source to destination with a certain weight
     void addEdge(int src, int dest, double weight, string code);
 
@@ -39,7 +39,7 @@ public:
     void visitando(Stop& v);
     void dfsTopo(Stop& v, list<Stop>& order);
     void bfsDist(Stop v);
-
+    Stop& getStop(int index);
     Stop& getStop(string code);
     vector<Stop>& getStops();
     int getIndexStop(string code);

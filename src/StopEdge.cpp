@@ -43,6 +43,10 @@ float Stop::getLatitude() const {
     return latitude;
 }
 
+int Stop::getPred() const {
+    return pred;
+}
+
 float Stop::getLongitude() const {
     return longitude;
 }
