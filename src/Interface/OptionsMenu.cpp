@@ -25,7 +25,7 @@ void OptionsMenu::setWalkingFactor() {
 
 void OptionsMenu::setMaxWalkingDistance() {
     string input = anyInputMenu("What is the maximum distance you would like to walk, in meters?", "(Type 'B' to go back:)");
-    while (!checkIntInput(input))
+    while (!checkIntInput(input) && input!="B")
         input = anyInputMenu("What is the maximum distance you would like to walk, in meters?", "Invalid Input! (Type 'B' to go back:)");
     if(input == "B")
         return;

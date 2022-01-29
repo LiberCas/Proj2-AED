@@ -66,7 +66,9 @@ System::System() {
                     break;
                 if(dmOption == 2 && directionsMenu.searchByLoc())
                     break;
-                if(dmOption == 3)
+                if(dmOption == 3 && directionsMenu.insertCoordinates())
+                    break;
+                if(dmOption == 4)
                     break;
             }
             if (dmOption == 3) continue;
