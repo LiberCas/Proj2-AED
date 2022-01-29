@@ -57,7 +57,8 @@ void Controller::readLines() {
         while (!linesFile.eof() && linesFile.peek() != '\n') {
             Line line;
             linesFile >> line;
-            this->linesDB.push_back(line);
+            if(line.getCode().find('M') == string::npos)
+                this->linesDB.push_back(line);
         }
         linesDB.pop_back();
         linesFile.close();
