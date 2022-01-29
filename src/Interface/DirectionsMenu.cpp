@@ -55,6 +55,33 @@ bool DirectionsMenu::searchByLine() {
 }
 
 bool DirectionsMenu::searchByLoc() {
+    string latitudeStr = anyInputMenu("Please insert the latitude, or type 'B' to go back");
+    while(!is_coord(latitudeStr) && latitudeStr!="B")
+        latitudeStr = anyInputMenu("Please insert the latitude, or type 'B' to go back", "Invalid Input!");
+    if(latitudeStr == "B")
+        return false;
+    string longitudeStr = anyInputMenu("Please insert the longitude, or type 'B' to go back");
+    while(!is_coord(longitudeStr) && longitudeStr!="B")
+        longitudeStr = anyInputMenu("Please insert the longitude, or type 'B' to go back", "Invalid Input!");
+    if(longitudeStr == "B")
+        return false;
+    string distance = anyInputMenu("Please insert the maximum distance to those coords, or type 'B' to go back");
+    while(!is_coord(distance) && longitudeStr!="B")
+        distance = anyInputMenu("Please insert the maximum distance to those coords, or type 'B' to go back", "Invalid Input!");
+    if(distance == "B")
+        return false;
+    vector<string> stopsOptions;
+    vector<int> searchLine = controller->getStopsNearCoords(stod(longitudeStr), stod(latitudeStr), stod(distance));
+    for(auto stopIdx : searchLine)
+        stopsOptions.push_back(controller->getGraph().getStop(stopIdx).getCode());
+    stopsOptions.push_back("Go Back");
+    option = printOptionsMenu(stopsOptions, "Select Stop");
+    if(option >= searchLine.size())
+        return false;
+    if(currentInput == 'O')
+        origin = controller->getGraph().getStop(searchLine.at(option)).getCode();
+    else
+        destination = controller->getGraph().getStop(searchLine.at(option)).getCode();
     return true;
 }
 
@@ -68,14 +95,14 @@ void DirectionsMenu::showDirections() {
 }
 
 bool DirectionsMenu::insertCoordinates() {
-    string latitudeStr = anyInputMenu("Please insert the x coordinate, or type 'B' to go back");
+    string latitudeStr = anyInputMenu("Please insert the latitude, or type 'B' to go back");
     while(!is_number(latitudeStr) && latitudeStr!="B")
-        latitudeStr = anyInputMenu("Please insert the x coordinate, or type 'B' to go back", "Invalid Input!");
+        latitudeStr = anyInputMenu("Please insert the latitude, or type 'B' to go back", "Invalid Input!");
     if(latitudeStr == "B")
         return false;
-    string longitudeStr = anyInputMenu("Please insert the y coordinate, or type 'B' to go back");
+    string longitudeStr = anyInputMenu("Please insert the longitude, or type 'B' to go back");
     while(!is_number(longitudeStr) && longitudeStr!="B")
-        longitudeStr = anyInputMenu("Please insert the y coordinate, or type 'B' to go back", "Invalid Input!");
+        longitudeStr = anyInputMenu("Please insert the longitude, or type 'B' to go back", "Invalid Input!");
     if(longitudeStr == "B")
         return false;
     if(currentInput == 'O')

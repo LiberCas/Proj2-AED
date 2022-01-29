@@ -106,6 +106,20 @@ bool Menu::checkIntInput(string input, int lowerBound, int upperBound) {
     return (is_number(input) && stoi(input)>=lowerBound && stoi(input)<=upperBound);
 }
 
+bool Menu::is_coord(const string& s)
+{
+    string::const_iterator it = s.begin();
+    if(*it == '-')
+        it++;
+    int ptCounter = 0;
+    while (it != s.end() && (isdigit(*it) || *it == '.') && ptCounter < 2) {
+        if(*it == '.')
+            ptCounter++;
+        ++it;
+    }
+    return !s.empty() && it == s.end();
+}
+
 bool Menu::is_number(const string& s)
 {
     string::const_iterator it = s.begin();

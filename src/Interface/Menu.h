@@ -30,6 +30,7 @@ public:
     void printUpperFrame(); //!< upper frame printer
     bool checkIntInput(string input, int lowerBound = 0, int upperBound = 1000000 ); //!< verifies if a string is a valid number and between a certain range
     bool is_number(const string &s); //!< verifies is a string can be translated to an integer
+    bool is_coord(const string &s);
 };
 #endif //PROJ1_MENU_H
 

@@ -84,6 +84,8 @@ public:
     void setMaxWalkDist(int maxWD);
 
     void addEdgesInWalkingDistance();
+
+    vector<int> getStopsNearCoords(double longitude, double latitude, double distance);
 };
 
 #endif //PROJ1_CONTROLLER_H

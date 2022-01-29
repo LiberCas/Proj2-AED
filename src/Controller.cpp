@@ -283,6 +283,15 @@ void Controller::setWalkingFac(int walkF) {
     walkingFactor = walkF;
 }
 
+vector<int> Controller::getStopsNearCoords(double longitude, double latitude, double distance) {
+    vector<int> res;
+    cout << longitude << " " << latitude << " " << distance << endl;
+    for (auto &&stop : stopDB)
+        if(haversine(latitude, longitude, stop.getLatitude(), stop.getLongitude())<=distance)
+            res.push_back(stop.getIndex());
+    return res;
+}
+
 
 
 
