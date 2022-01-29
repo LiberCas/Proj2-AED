@@ -26,7 +26,7 @@ System::System() {
         input = firstOpeningMenu.anyInputMenu("From 1 to 10, how much do you like to walk?");
         while (!firstOpeningMenu.checkIntInput(input,1,10))
             input = firstOpeningMenu.anyInputMenu("From 1 to 10, how much do you like to walk?", "Invalid Input!");
-        controller.setWalkingFac((30-stoi(input))/10);
+        controller.setWalkingFac(stoi(input));
         input = firstOpeningMenu.anyInputMenu("What is the maximum distance you would like to walk, in meters?");
         while (!firstOpeningMenu.checkIntInput(input))
             input = firstOpeningMenu.anyInputMenu("What is the maximum distance you would like to walk, in meters?", "Invalid Input!");
@@ -91,7 +91,7 @@ System::System() {
 }
 
 string System::fixString(string str) {
-    size_t index = 0;
+    /*size_t index = 0;
     while (true) {
         index = str.find("├", index);
         if (index == std::string::npos) break;
@@ -99,7 +99,7 @@ string System::fixString(string str) {
         str.replace(index, 1, "E");
 
         index += 1;
-    }
-    //str = regex_replace(str, regex("├ë"), "E");
+    }*/
+    str = regex_replace(str, regex("├"), "E");
     return str;
 }

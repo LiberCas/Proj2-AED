@@ -20,7 +20,7 @@ void OptionsMenu::setWalkingFactor() {
         input = anyInputMenu("From 1 to 10, how much do you like to walk?", "Invalid Input! (Type 'B' to go back:)");
     if(input == "B")
         return;
-    controller->setWalkingFac((30-stoi(input))/10);
+    controller->setWalkingFac(stoi(input));
 }
 
 void OptionsMenu::setMaxWalkingDistance() {

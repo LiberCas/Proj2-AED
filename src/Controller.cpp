@@ -252,7 +252,7 @@ void Controller::setMaxWalkDist(int maxWD) {
 }
 
 void Controller::setWalkingFac(int walkF) {
-    walkingFactor = walkF;
+    walkingFactor = (25-walkF)/10;
 }
 
 
