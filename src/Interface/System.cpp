@@ -89,9 +89,9 @@ System::System() {
     }
 
 }
-
+/*
 string System::fixString(string str) {
-    /*size_t index = 0;
+    size_t index = 0;
     while (true) {
         index = str.find("├", index);
         if (index == std::string::npos) break;
@@ -99,7 +99,7 @@ string System::fixString(string str) {
         str.replace(index, 1, "E");
 
         index += 1;
-    }*/
+    }
     str = regex_replace(str, regex("├"), "E");
     return str;
-}
+}*/

@@ -42,7 +42,7 @@ bool DirectionsMenu::searchByLine() {
     else
         searchLine = controller->findLine(lineId).getL0();
     for(auto stopIdx : searchLine)
-        stopsOptions.push_back(System::fixString(controller->getGraph().getStop(stopIdx).getName()));
+        stopsOptions.push_back(controller->getGraph().getStop(stopIdx).getName());
     stopsOptions.push_back("Go Back");
     option = printOptionsMenu(stopsOptions, "Select Stop");
     if(option >= searchLine.size())
