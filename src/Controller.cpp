@@ -65,6 +65,8 @@ void Controller::readLines() {
     }
 }
 
+
+
 int Controller::getIndexStop(string code) {
     for(int i=0;i<=stopDB.size();i++){
         if(stopDB[i].getCode()==code){
@@ -110,6 +112,24 @@ void Controller::extractStopsFromLines(){
     }
 }
 
+bool Controller::readUserData() {
+    ifstream userFile;
+    userFile.open("../src/dataset/userData.txt");
+    if (userFile.fail()) {
+        return false;
+    }
+    char buf[256];
+    userFile.getline(buf, 100);
+    userName = buf;
+    userFile.ignore();
+    userFile.getline(buf, 100);
+    walkingFactor = atoi(buf);
+    userFile.ignore();
+    userFile.getline(buf, 100);
+    maxWalingDistance = atoi(buf);
+    userFile.close();
+    return true;
+}
 
 Controller::~Controller(){
     stopDB.clear();
@@ -191,6 +211,10 @@ vector<Stop> &Controller::getStopDB() {
     return this->stopDB;
 }
 
+string Controller::getUsername(){
+    return userName;
+}
+
  double Controller::haversine(double lat1, double lon1, double lat2, double lon2) {
     // distance between latitudes
     // and longitudes
@@ -213,7 +237,24 @@ vector<Stop> &Controller::getStopDB() {
 }
 
 
-void Controller::writeFiles() {}
+void Controller::writeFiles() {
+    ofstream userFile;
+    userFile.open("../src/dataset/userData.txt");
+    userFile << userName << "\n" << walkingFactor << "\n" << maxWalingDistance;
+}
+
+void Controller::setUsername(string username) {
+    this->userName = username;
+}
+
+void Controller::setMaxWalkDist(int maxWD) {
+    maxWalingDistance = maxWD;
+}
+
+void Controller::setWalkingFac(int walkF) {
+    walkingFactor = walkF;
+}
+
 
 
 

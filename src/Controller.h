@@ -16,6 +16,9 @@ private:
     vector<Stop> stopDB; //!< Airports data base
     vector<Line> linesDB;
     Graph graph;
+    string userName;
+    int maxWalingDistance;
+    int walkingFactor;
 public:
     // Constructors
     /** @brief  Default constructor.*/
@@ -27,10 +30,13 @@ public:
     /** @brief  Returns the Airports data base.*/
     vector<Stop>& getStops();
 
+    string getUsername();
+
     /** @brief  Returns the Airports data base.*/
     vector<Line> getLines();
     void readStops();
     void readLines();
+    bool readUserData();
     void extractStopsFromLines();
     int getIndexStop(string code);
     vector<Stop>& getStopDB();
@@ -72,6 +78,11 @@ public:
                             double lat2, double lon2);
 
     string getDirections(Stop origin, Stop destination);
+
+    void setUsername(string username);
+    void setWalkingFac(int walkF);
+    void setMaxWalkDist(int maxWD);
+
 };
 
 #endif //PROJ1_CONTROLLER_H
