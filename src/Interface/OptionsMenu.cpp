@@ -21,6 +21,7 @@ void OptionsMenu::setWalkingFactor() {
     if(input == "B")
         return;
     controller->setWalkingFac(stoi(input));
+    singleInputScreen("Maximum distance changed!\nNote that these changes will take effect only after a system restart");
 }
 
 void OptionsMenu::setMaxWalkingDistance() {
@@ -30,6 +31,7 @@ void OptionsMenu::setMaxWalkingDistance() {
     if(input == "B")
         return;
     controller->setMaxWalkDist(stoi(input));
+    singleInputScreen("Maximum distance changed!\nNote that these changes will take effect only after a system restart");
 }
 
 void OptionsMenu::setUsername() {
