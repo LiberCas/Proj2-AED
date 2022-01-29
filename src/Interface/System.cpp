@@ -18,7 +18,7 @@ void System::clearScreen() {
 
 System::System() {
     controller = Controller();
-
+/*
     if(!controller.readUserData()){
         Menu firstOpeningMenu = Menu(controller);
         string input = firstOpeningMenu.anyInputMenu("Welcome new user! Please insert a username:");
@@ -33,8 +33,6 @@ System::System() {
         controller.setMaxWalkDist(stoi(input));
         clearScreen();
     }
-
-    controller.addEdgesInWalkingDistance();
     Menu startMenu = Menu(controller);
     OptionsMenu optionsMenu = OptionsMenu(controller);
     DirectionsMenu directionsMenu = DirectionsMenu(controller);
@@ -88,8 +86,8 @@ System::System() {
             }
         }
         if(initOption == 2) break;
-
     }
+    */
 }
 /*
 string System::fixString(string str) {

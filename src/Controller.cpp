@@ -13,10 +13,10 @@
 Controller::Controller() {
     readStops();
     readLines();
+    addEdgesInWalkingDistance(0.2);
 }
 
 void Controller::readStops(){
-    graph = Graph(2487, true);
     ifstream stopsFile;
     stopsFile.open("../src/dataset/stops.csv");
     if (stopsFile.fail()) {
@@ -31,17 +31,15 @@ void Controller::readStops(){
             stopsFile >> stop;
             stop.setIndex(index);
             this->stopDB.push_back(stop);
-            graph.getStops().push_back(stop);
             index++;
         }
         stopDB.pop_back();
     }
     stopsFile.close();
-    /*
+    graph = Graph(stopDB.size(), true);
     for (int i=0;i<stopDB.size();i++){
         graph.addStop(stopDB.at(i));
     }
-    */
 }
 
 void Controller::readLines() {
@@ -113,15 +111,16 @@ void Controller::extractStopsFromLines(){
     }
 }
 
-void Controller::addEdgesInWalkingDistance() {
-    double weight;
-    for (int i = 0; i < graph.getStops().size() - 1; i++) {
-        for (int j = 1; j < graph.getStops().size(); j++) {
-            weight = haversine(graph.getStops()[i].getLatitude(), graph.getStops()[i].getLongitude(),
+void Controller::addEdgesInWalkingDistance(double walkingDistance) {
+    for (int i = 0; i < graph.getStops().size()-1; i++) {
+        for (int j = i+1; j < graph.getStops().size(); j++) {
+            double weight = haversine(graph.getStops()[i].getLatitude(), graph.getStops()[i].getLongitude(),
                                graph.getStops()[j].getLatitude(), graph.getStops()[j].getLongitude());
-            if (weight <= maxWalingDistance/1000 && !graph.getStops()[i].isInAdj(graph.getStops()[j]) &&
-                graph.getStops()[i].getIndex() != graph.getStops()[j].getIndex()) {
-                graph.addEdge(graph.getStops()[i].getIndex(), graph.getStops()[j].getIndex(), walkingFactor * weight, "walking");
+            if (!graph.getStops()[i].isInAdj(graph.getStops()[j]) && weight <= walkingDistance) {
+                graph.addEdge(i, j, weight, "walking");
+            }
+            if (!graph.getStops()[j].isInAdj(graph.getStops()[i]) && weight <= walkingDistance) {
+                graph.addEdge(j, i, weight, "walking");
             }
         }
     }

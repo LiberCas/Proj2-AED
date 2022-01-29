@@ -17,7 +17,7 @@ private:
     vector<Line> linesDB;
     Graph graph;
     string userName;
-    int maxWalingDistance;
+    int maxWalingDistance=10000;
     int walkingFactor;
 public:
     // Constructors
@@ -83,7 +83,7 @@ public:
     void setWalkingFac(int walkF);
     void setMaxWalkDist(int maxWD);
 
-    void addEdgesInWalkingDistance();
+    void addEdgesInWalkingDistance(double walkingDistance);
 };
 
 #endif //PROJ1_CONTROLLER_H
