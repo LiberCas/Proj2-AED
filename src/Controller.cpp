@@ -135,13 +135,10 @@ bool Controller::readUserData() {
     }
     char buf[256];
     userFile.getline(buf, 100, '\n');
-    cout << buf << " x\n";
     userName = buf;
     userFile.getline(buf, 100, '\n');
-    cout << buf << " x\n";
     walkingFactor = atoi(buf);
     userFile.getline(buf, 100, '\n');
-    cout << buf << " x\n";
     maxWalingDistance = atoi(buf);
     userFile.close();
     return true;
