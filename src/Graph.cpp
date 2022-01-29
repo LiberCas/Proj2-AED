@@ -18,7 +18,7 @@ void Graph::addStop(Stop &stop) {
 }
 // Add edge from source to destination with a certain weight
 
-vector<int> Graph::dijkstra_distance(Stop& a, Stop& b) {
+vector<pair<int, std::string>> Graph::dijkstra_distance(Stop& a, Stop& b) {
     if (a==b) return {};
     resetNodes();
     a.setDistance(0);
@@ -34,6 +34,7 @@ vector<int> Graph::dijkstra_distance(Stop& a, Stop& b) {
             if ((tempDist < getDest(edge).getDistance()) && q.hasKey(edge.getDest())){
                 stops[getDest(edge).getIndex()].setDistance(tempDist);
                 stops[getDest(edge).getIndex()].setPred(u);
+                stops[getDest(edge).getIndex()].setPredLine(edge.getLineCode());
                 q.decreaseKey(getDest(edge).getIndex(),tempDist);
             }
         }
@@ -41,15 +42,19 @@ vector<int> Graph::dijkstra_distance(Stop& a, Stop& b) {
     return getPath(a, b);
 }
 
-vector<int> Graph::getPath(Stop& a, Stop& b){
-    vector<int> res;
-    res.push_back(b.getIndex());
+vector<pair<int, string>> Graph::getPath(Stop& a, Stop& b){
+    vector<pair<int, string>> res;
+    pair<int, string> p = {b.getIndex(), b.getPredLine()};
+    res.push_back(p);
     int i = b.getPred();
+    p = {i, getStop(i).getPredLine()};
     while (i!=a.getIndex()){
-        res.insert(res.begin(),i);
+        res.insert(res.begin(),p);
         i = getStop(i).getPred();
+        p = {i, getStop(i).getPredLine()};
     }
-    res.insert(res.begin(), a.getIndex());
+    p = {a.getIndex(), a.getPredLine()};
+    res.insert(res.begin(), p);
     if (b.getDistance()==INT_MAX) return {};
     return res;
 }
@@ -98,7 +103,7 @@ void Graph::addEdge(int src, int dest, double weight = 1.0, string code=0){
     stops.at(src).addEdge(dest, weight, code);
 }
 
-vector<int> Graph::bfs(Stop& origin, Stop& dest) {
+vector<pair<int, std::string>> Graph::bfs(Stop& origin, Stop& dest) {
     resetNodes();
     queue<Stop> q; // queue of unvisited nodes
     q.push(origin);

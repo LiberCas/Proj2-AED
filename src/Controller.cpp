@@ -202,8 +202,22 @@ Stop Controller::getClosestStop(double lat1, double lon1) {
     return min;
 }
 
-string Controller::getDirections(Stop origin, Stop destination) {
-    return "Por aí";
+string Controller::getDirections(string origin, string destination) {
+    vector<pair<int, string>> temp = graph.dijkstra_distance(graph.getStop("CORD2"), graph.getStop("GDM1"));
+    for (int i = 0;i<temp.size();i++){
+        cout << stopDB[temp[i].first].getCode() << " " << temp[i].second << endl;
+    }
+    vector<pair<int, string>> path = graph.dijkstra_distance(graph.getStop(origin), graph.getStop(destination));
+    string line = path[1].second;
+    string directions = "From " + stopDB[path[0].first].getName() + " in line " + line + " to ";
+    for (int i = 1; i < path.size(); ++i) {
+        if(path[i].second!=line){
+            line = path[i].second;
+            directions += stopDB[path[i-1].first].getName() + "\nFrom " + stopDB[path[i-1].first].getName() + " in line " + path[i].second +" to ";
+        }
+    }
+    directions += graph.getStop(destination).getName();
+    return directions;
 }
 
 

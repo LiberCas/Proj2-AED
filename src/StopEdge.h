@@ -24,6 +24,7 @@ private:
     double distance;
     bool visited;   // As the node been visited on a search?
     int pred;
+    string predLine;
 
 public:
     Stop();
@@ -35,10 +36,11 @@ public:
     const string &getZone() const;
     float getLatitude() const;
     float getLongitude() const;
-    int getPred( ) const    ;
+    int getPred( ) const;
     double getDistance()const;
     bool getVisited() const;
     list<Edge> getAdj();
+    string getPredLine() const;
     void setCode(const string &code);
     void setDistance(double distance);
     void setVisited(bool visited);
@@ -47,6 +49,7 @@ public:
     void setZone(const string &zone);
     void setLatitude(float latitude);
     void setLongitude(float longitude);
+    void setPredLine(string line);
     friend istream &operator>>(istream &is, Stop &stop);
     void addEdge(Edge& edge);
     Stop(int x, int y);

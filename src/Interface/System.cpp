@@ -89,7 +89,6 @@ System::System() {
         if(initOption == 2) break;
 
     }
-
 }
 /*
 string System::fixString(string str) {

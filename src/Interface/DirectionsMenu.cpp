@@ -20,9 +20,9 @@ bool DirectionsMenu::insertId() {
     if(stopID == "B")
         return false;
     if(currentInput == 'O')
-        origin = controller->findStop(stopID);
+        origin = stopID;
     else
-        destination = controller->findStop(stopID);
+        destination = stopID;
     return true;
 }
 
@@ -48,9 +48,9 @@ bool DirectionsMenu::searchByLine() {
     if(option >= searchLine.size())
         return false;
     if(currentInput == 'O')
-        origin = controller->findStop(controller->getGraph().getStop(searchLine.at(option)).getCode());
+        origin = controller->getGraph().getStop(searchLine.at(option)).getCode();
     else
-        destination = controller->findStop(controller->getGraph().getStop(searchLine.at(option)).getCode());
+        destination = controller->getGraph().getStop(searchLine.at(option)).getCode();
     return true;
 }
 
@@ -79,9 +79,9 @@ bool DirectionsMenu::insertCoordinates() {
     if(longitudeStr == "B")
         return false;
     if(currentInput == 'O')
-        origin = Stop(stoi(latitudeStr), stoi(longitudeStr));
+        origin = latitudeStr + "," + longitudeStr;
     else
-        destination = Stop(stoi(latitudeStr), stoi(longitudeStr));
+        destination = latitudeStr + "," + longitudeStr;
     return true;
 }
 

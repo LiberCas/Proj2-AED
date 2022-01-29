@@ -10,8 +10,8 @@
 
 class DirectionsMenu  : public Menu{
 private:
-    Stop origin;
-    Stop destination;
+    string origin;
+    string destination;
     char currentInput;
 public:
     DirectionsMenu(Controller& controller);

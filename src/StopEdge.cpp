@@ -11,7 +11,7 @@ Stop::Stop() {
     this->zone = "";
     this->latitude = 0;
     this->longitude = 0;
-
+    this->predLine = "";
 }
 Stop::Stop(const string &code, const string &name, const string &zone, float latitude, float longitude) {
     this->code = code;
@@ -19,6 +19,7 @@ Stop::Stop(const string &code, const string &name, const string &zone, float lat
     this->zone = zone;
     this->latitude = latitude;
     this->longitude =longitude;
+    this->predLine = "";
 }
 
 Stop::~Stop(){
@@ -132,6 +133,14 @@ void Stop::setIndex(int index) {
 
 int Stop::getIndex() const {
     return index;
+}
+
+void Stop::setPredLine(string line) {
+    predLine = line;
+}
+
+string Stop::getPredLine() const{
+    return predLine;
 }
 
 //----------------------------------------------------------------------------------------------

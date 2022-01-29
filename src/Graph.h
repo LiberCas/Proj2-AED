@@ -22,16 +22,16 @@ public:
     Graph(int nodes, bool dir = false);
     Stop& getDest(Edge edge);
     void addStop(Stop& stop);
-    vector<int> dijkstra_distance (Stop& a, Stop& b);
+    vector<pair<int, std::string>> dijkstra_distance (Stop& a, Stop& b);
     // Add edge from source to destination with a certain weight
     void addEdge(int src, int dest, double weight, string code);
 
     // Depth-First Search: example implementation
     void dfs(Stop& v);
-    vector<int> getPath(Stop& a, Stop& b);
+    vector<pair<int, std::string>> getPath(Stop& a, Stop& b);
 
     // Breadth-First Search: example implementation
-    vector<int> bfs(Stop& origin, Stop& dest);
+    vector<pair<int, std::string>> bfs(Stop& origin, Stop& dest);
 
     // ----- Functions to implement in this class -----
     void resetNodes();
