@@ -23,6 +23,7 @@ public:
     Stop& getDest(Edge edge);
     void addStop(Stop& stop);
     vector<pair<int, std::string>> dijkstra_distance (Stop& a, Stop& b);
+    vector<pair<int, string>> dijkstra_zones(int a, int b);
     // Add edge from source to destination with a certain weight
     void addEdge(int src, int dest, double weight, string code);
 

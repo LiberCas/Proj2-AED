@@ -42,6 +42,32 @@ vector<pair<int, std::string>> Graph::dijkstra_distance(Stop& a, Stop& b) {
     return getPath(a, b);
 }
 
+vector<pair<int, string>> Graph::dijkstra_zones(int a, int b) {
+    if (a==b) return {};
+    resetNodes();
+    stops[a].setDistance(0);
+    MinHeap<int,double> q(n,0);
+    for (int i = 0; i<n;i++){
+        q.insert(i,stops[i].getDistance());
+    }
+    while (q.getSize()!=0){
+        int u = q.removeMin();
+        stops[u].setVisited(true);
+        for (Edge& edge : stops[u].getAdj()){
+            int v = edge.getDest();
+            int tempDist = stops[u].getDistance();
+            if(stops[u].getZone() != stops[v].getZone())
+                tempDist++;
+            if ((tempDist < getDest(edge).getDistance()) && q.hasKey(edge.getDest())){
+                stops[getDest(edge).getIndex()].setDistance(tempDist);
+                stops[getDest(edge).getIndex()].setPred(u);
+                q.decreaseKey(getDest(edge).getIndex(),tempDist);
+            }
+        }
+    }
+    return getPath(stops[a], stops[b]);
+}
+
 vector<pair<int, string>> Graph::getPath(Stop& a, Stop& b){
     vector<pair<int, string>> res;
     pair<int, string> p = {b.getIndex(), b.getPredLine()};
