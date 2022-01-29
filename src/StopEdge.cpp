@@ -143,6 +143,13 @@ string Stop::getPredLine() const{
     return predLine;
 }
 
+bool Stop::isInAdj(Stop &stop) {
+    for(auto& e :adj){
+        if(e.getDest()==stop.getIndex()) return true;
+    }
+    return false;
+}
+
 //----------------------------------------------------------------------------------------------
 
 

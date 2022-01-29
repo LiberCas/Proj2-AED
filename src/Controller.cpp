@@ -113,6 +113,20 @@ void Controller::extractStopsFromLines(){
     }
 }
 
+void Controller::addEdgesInWalkingDistance() {
+    double weight;
+    for (int i = 0; i < graph.getStops().size() - 1; i++) {
+        for (int j = 1; j < graph.getStops().size(); j++) {
+            weight = haversine(graph.getStops()[i].getLatitude(), graph.getStops()[i].getLongitude(),
+                               graph.getStops()[j].getLatitude(), graph.getStops()[j].getLongitude());
+            if (weight <= maxWalingDistance/1000 && !graph.getStops()[i].isInAdj(graph.getStops()[j]) &&
+                graph.getStops()[i].getIndex() != graph.getStops()[j].getIndex()) {
+                graph.addEdge(graph.getStops()[i].getIndex(), graph.getStops()[j].getIndex(), walkingFactor * weight, "walking");
+            }
+        }
+    }
+}
+
 bool Controller::readUserData() {
     ifstream userFile;
     userFile.open("../src/dataset/userData.txt");
@@ -120,13 +134,14 @@ bool Controller::readUserData() {
         return false;
     }
     char buf[256];
-    userFile.getline(buf, 100);
+    userFile.getline(buf, 100, '\n');
+    cout << buf << " x\n";
     userName = buf;
-    userFile.ignore();
-    userFile.getline(buf, 100);
+    userFile.getline(buf, 100, '\n');
+    cout << buf << " x\n";
     walkingFactor = atoi(buf);
-    userFile.ignore();
-    userFile.getline(buf, 100);
+    userFile.getline(buf, 100, '\n');
+    cout << buf << " x\n";
     maxWalingDistance = atoi(buf);
     userFile.close();
     return true;
@@ -203,18 +218,18 @@ Stop Controller::getClosestStop(double lat1, double lon1) {
     return min;
 }
 
-string Controller::getDirections(string origin, string destination) {/*
-    vector<pair<int, string>> temp = graph.dijkstra_distance(graph.getStop("CORD2"), graph.getStop("GDM1"));
+string Controller::getDirections(string origin, string destination, int type) {
+    vector<pair<int, string>> temp = graph.dijkstra_distance(graph.getStop(origin), graph.getStop(destination));
     for (int i = 0;i<temp.size();i++){
         cout << stopDB[temp[i].first].getCode() << " " << temp[i].second << endl;
-    }*/
+    }
     vector<pair<int, string>> path = graph.dijkstra_distance(graph.getStop(origin), graph.getStop(destination));
     string line = path[1].second;
-    string directions = "From " + stopDB[path[0].first].getName() + " in line " + line + " to ";
+    string directions = "From " + stopDB[path[0].first].getName() + " by " + line + " to ";
     for (int i = 1; i < path.size(); ++i) {
         if(path[i].second!=line){
             line = path[i].second;
-            directions += stopDB[path[i-1].first].getName() + "\nFrom " + stopDB[path[i-1].first].getName() + " in line " + path[i].second +" to ";
+            directions += stopDB[path[i-1].first].getName() + "\nFrom " + stopDB[path[i-1].first].getName() + " by " + path[i].second +" to ";
         }
     }
     directions += graph.getStop(destination).getName();

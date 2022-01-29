@@ -34,6 +34,7 @@ System::System() {
         clearScreen();
     }
 
+    controller.addEdgesInWalkingDistance();
     Menu startMenu = Menu(controller);
     OptionsMenu optionsMenu = OptionsMenu(controller);
     DirectionsMenu directionsMenu = DirectionsMenu(controller);

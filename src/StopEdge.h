@@ -59,6 +59,8 @@ public:
 
     int getIndex() const;
     void addEdge(int dest, double weight, string code);
+
+    bool isInAdj(Stop &stop);
 };
 
 

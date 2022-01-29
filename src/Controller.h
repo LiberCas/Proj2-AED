@@ -77,12 +77,13 @@ public:
     static double haversine(double lat1, double lon1,
                             double lat2, double lon2);
 
-    string getDirections(string origin, string destination);
+    string getDirections(string origin, string destination, int type = 0);
 
     void setUsername(string username);
     void setWalkingFac(int walkF);
     void setMaxWalkDist(int maxWD);
 
+    void addEdgesInWalkingDistance();
 };
 
 #endif //PROJ1_CONTROLLER_H
