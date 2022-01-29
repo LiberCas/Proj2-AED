@@ -67,7 +67,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/cmake-build-debug"
+			"value" : "c:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "20"
+			"value" : "21"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -103,7 +103,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "2"
+			"value" : "1"
 		},
 		{
 			"name" : "CMAKE_CODEBLOCKS_COMPILER_ID",
@@ -482,18 +482,6 @@
 			"value" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32"
 		},
 		{
-			"name" : "CMAKE_DEPENDS_USE_COMPILER",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : "FALSE"
-		},
-		{
 			"name" : "CMAKE_DLLTOOL",
 			"properties" : 
 			[
@@ -731,7 +719,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2"
+			"value" : "C:/Users/Acer/Desktop/Proj2-AED"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -1031,7 +1019,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe"
+			"value" : "C:/PROGRA~1/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -1431,7 +1419,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files/JetBrains/CLion 2021.2.3/bin/cmake/win/share/cmake-3.20"
+			"value" : "C:/Program Files/JetBrains/CLion 2021.2.3/bin/cmake/win/share/cmake-3.21"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1667,7 +1655,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[C:/Users/igcbs/AppData/Local/Programs/Python/Python310/python.exe][cfound components: Interpreter ][v3.10.2()]"
+			"value" : "[C:/Python39/python.exe][cfound components: Interpreter ][v3.9.1()]"
 		},
 		{
 			"name" : "INSTALL_GTEST",
@@ -1703,7 +1691,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/igcbs/AppData/Local/Programs/Python/Python310/python.exe"
+			"value" : "C:/Python39/python.exe"
 		},
 		{
 			"name" : "_Python_INTERPRETER_PROPERTIES",
@@ -1715,7 +1703,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "Python;3;10;2;64;;cp310-win_amd64;C:\\Users\\igcbs\\AppData\\Local\\Programs\\Python\\Python310\\Lib;C:\\Users\\igcbs\\AppData\\Local\\Programs\\Python\\Python310\\Lib;C:\\Users\\igcbs\\AppData\\Local\\Programs\\Python\\Python310\\Lib\\site-packages;C:\\Users\\igcbs\\AppData\\Local\\Programs\\Python\\Python310\\Lib\\site-packages"
+			"value" : "Python;3;9;1;64;;cp39-win_amd64;C:\\Python39\\Lib;C:\\Python39\\Lib;C:\\Python39\\Lib\\site-packages;C:\\Python39\\Lib\\site-packages"
 		},
 		{
 			"name" : "_Python_INTERPRETER_SIGNATURE",
@@ -1727,7 +1715,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "e5da1286c59fa628c406ea4f5816e478"
+			"value" : "b27f5aea21299c5263418dec5a8bbfc2"
 		},
 		{
 			"name" : "cmake_package_name",
@@ -1751,7 +1739,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/cmake-build-debug/lib/googletest-master/googletest/generated"
+			"value" : "C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/lib/googletest-master/googletest/generated"
 		},
 		{
 			"name" : "gmock_BINARY_DIR",
@@ -1763,7 +1751,19 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/cmake-build-debug/lib/googletest-master/googlemock"
+			"value" : "C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/lib/googletest-master/googlemock"
+		},
+		{
+			"name" : "gmock_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
 		},
 		{
 			"name" : "gmock_LIB_DEPENDS",
@@ -1787,7 +1787,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/lib/googletest-master/googlemock"
+			"value" : "C:/Users/Acer/Desktop/Proj2-AED/lib/googletest-master/googlemock"
 		},
 		{
 			"name" : "gmock_build_tests",
@@ -1827,7 +1827,19 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/cmake-build-debug/lib/googletest-master"
+			"value" : "C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/lib/googletest-master"
+		},
+		{
+			"name" : "googletest-distribution_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
 		},
 		{
 			"name" : "googletest-distribution_SOURCE_DIR",
@@ -1839,7 +1851,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/lib/googletest-master"
+			"value" : "C:/Users/Acer/Desktop/Proj2-AED/lib/googletest-master"
 		},
 		{
 			"name" : "gtest_BINARY_DIR",
@@ -1851,7 +1863,19 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/cmake-build-debug/lib/googletest-master/googletest"
+			"value" : "C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug/lib/googletest-master/googletest"
+		},
+		{
+			"name" : "gtest_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
 		},
 		{
 			"name" : "gtest_SOURCE_DIR",
@@ -1863,7 +1887,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/lib/googletest-master/googletest"
+			"value" : "C:/Users/Acer/Desktop/Proj2-AED/lib/googletest-master/googletest"
 		},
 		{
 			"name" : "gtest_build_samples",
@@ -1979,7 +2003,19 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/cmake-build-debug"
+			"value" : "C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug"
+		},
+		{
+			"name" : "untitled_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
 		},
 		{
 			"name" : "untitled_SOURCE_DIR",
@@ -1991,7 +2027,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2"
+			"value" : "C:/Users/Acer/Desktop/Proj2-AED"
 		}
 	],
 	"kind" : "cache",

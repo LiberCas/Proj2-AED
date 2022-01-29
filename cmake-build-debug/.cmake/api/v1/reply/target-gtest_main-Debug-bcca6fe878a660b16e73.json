@@ -100,12 +100,12 @@
 				{
 					"backtrace" : 7,
 					"isSystem" : true,
-					"path" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/lib/googletest-master/googletest/include"
+					"path" : "C:/Users/Acer/Desktop/Proj2-AED/lib/googletest-master/googletest/include"
 				},
 				{
 					"backtrace" : 7,
 					"isSystem" : true,
-					"path" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/lib/googletest-master/googletest"
+					"path" : "C:/Users/Acer/Desktop/Proj2-AED/lib/googletest-master/googletest"
 				}
 			],
 			"language" : "CXX",

@@ -83,7 +83,7 @@ public:
     void setWalkingFac(int walkF);
     void setMaxWalkDist(int maxWD);
 
-    void addEdgesInWalkingDistance(double walkingDistance);
+    void addEdgesInWalkingDistance();
 };
 
 #endif //PROJ1_CONTROLLER_H

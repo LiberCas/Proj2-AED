@@ -21,13 +21,13 @@ void OptionsMenu::setWalkingFactor() {
     if(input == "B")
         return;
     controller->setWalkingFac(stoi(input));
-    singleInputScreen("Maximum distance changed!\nNote that these changes will take effect only after a system restart");
+    singleInputScreen("Walking Factor changed!\nNote that these changes will take effect only after a system restart");
 }
 
 void OptionsMenu::setMaxWalkingDistance() {
-    string input = anyInputMenu("What is the maximum distance you would like to walk, in meters?", "(Type 'B' to go back:)");
-    while (!checkIntInput(input) && input!="B")
-        input = anyInputMenu("What is the maximum distance you would like to walk, in meters?", "Invalid Input! (Type 'B' to go back:)");
+    string input = anyInputMenu("What is the maximum walking distance, in meters? (max: 250)", "(Type 'B' to go back:)");
+    while (!checkIntInput(input, 1, 250) && input!="B")
+        input = anyInputMenu("What is the maximum walking distance, in meters? (max: 250)", "Invalid Input! (Type 'B' to go back:)");
     if(input == "B")
         return;
     controller->setMaxWalkDist(stoi(input));

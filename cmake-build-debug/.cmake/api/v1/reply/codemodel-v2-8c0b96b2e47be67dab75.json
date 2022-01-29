@@ -11,6 +11,7 @@
 						1
 					],
 					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20"
@@ -29,6 +30,7 @@
 						2
 					],
 					"hasInstallRule" : true,
+					"jsonFile" : "directory-lib.googletest-master-Debug-75ae683b823e4a5f5c1c.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.5"
@@ -44,6 +46,7 @@
 						3
 					],
 					"hasInstallRule" : true,
+					"jsonFile" : "directory-lib.googletest-master.googlemock-Debug-f76d04ce1afd4df1bccb.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.5"
@@ -60,6 +63,7 @@
 				{
 					"build" : "lib/googletest-master/googletest",
 					"hasInstallRule" : true,
+					"jsonFile" : "directory-lib.googletest-master.googletest-Debug-ea310170b43fd5c3cb72.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.5"
@@ -140,35 +144,35 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "gmock::@7e3384afdb8f59c86a5a",
-					"jsonFile" : "target-gmock-Debug-849b161750422018c11a.json",
+					"jsonFile" : "target-gmock-Debug-484f451c1033211f616b.json",
 					"name" : "gmock",
 					"projectIndex" : 2
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "gmock_main::@7e3384afdb8f59c86a5a",
-					"jsonFile" : "target-gmock_main-Debug-89c4ad6981736e89b411.json",
+					"jsonFile" : "target-gmock_main-Debug-59c2a825db461e1ad56d.json",
 					"name" : "gmock_main",
 					"projectIndex" : 2
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "gtest::@ccedbc95f081fc42d06b",
-					"jsonFile" : "target-gtest-Debug-6a6af52cad8302186f30.json",
+					"jsonFile" : "target-gtest-Debug-60af9551bfcf62be98a5.json",
 					"name" : "gtest",
 					"projectIndex" : 3
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "gtest_main::@ccedbc95f081fc42d06b",
-					"jsonFile" : "target-gtest_main-Debug-5b93a45b3245d317bc47.json",
+					"jsonFile" : "target-gtest_main-Debug-bcca6fe878a660b16e73.json",
 					"name" : "gtest_main",
 					"projectIndex" : 3
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "untitled::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-untitled-Debug-fe712134ee49531954d4.json",
+					"jsonFile" : "target-untitled-Debug-f2187a21ced9e317d33a.json",
 					"name" : "untitled",
 					"projectIndex" : 0
 				}
@@ -178,12 +182,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/cmake-build-debug",
-		"source" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2"
+		"build" : "C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug",
+		"source" : "C:/Users/Acer/Desktop/Proj2-AED"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 2
+		"minor" : 3
 	}
 }

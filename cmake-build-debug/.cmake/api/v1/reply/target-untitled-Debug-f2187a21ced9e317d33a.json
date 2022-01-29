@@ -61,11 +61,11 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/lib/googletest-master/googletest/include"
+					"path" : "C:/Users/Acer/Desktop/Proj2-AED/lib/googletest-master/googletest/include"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/lib/googletest-master/googlemock/include"
+					"path" : "C:/Users/Acer/Desktop/Proj2-AED/lib/googletest-master/googlemock/include"
 				}
 			],
 			"language" : "CXX",

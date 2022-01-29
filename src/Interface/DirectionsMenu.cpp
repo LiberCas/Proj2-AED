@@ -63,7 +63,7 @@ void DirectionsMenu::nowGetting(char option) {
 }
 
 void DirectionsMenu::showDirections() {
-    string directions = controller->getDirections(origin, destination);
+    string directions = controller->getDirections(origin, destination, option);
     singleInputScreen("Directions:\n"+ directions);
 }
 

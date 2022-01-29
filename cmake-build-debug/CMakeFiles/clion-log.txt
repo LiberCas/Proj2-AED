@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 3\AED\Proj2-AED2"
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Acer\Desktop\Proj2-AED
 -- The C compiler identification is GNU 8.1.0
 -- The CXX compiler identification is GNU 8.1.0
 -- Detecting C compiler ABI info
@@ -11,7 +11,7 @@
 -- Check for working CXX compiler: C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Found Python: C:/Users/igcbs/AppData/Local/Programs/Python/Python310/python.exe (found version "3.10.2") found components: Interpreter 
+-- Found Python: C:/Python39/python.exe (found version "3.9.1") found components: Interpreter 
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 3/AED/Proj2-AED2/cmake-build-debug
+-- Build files have been written to: C:/Users/Acer/Desktop/Proj2-AED/cmake-build-debug

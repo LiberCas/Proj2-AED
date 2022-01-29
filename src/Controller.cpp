@@ -13,7 +13,6 @@
 Controller::Controller() {
     readStops();
     readLines();
-    addEdgesInWalkingDistance(0.2);
 }
 
 void Controller::readStops(){
@@ -111,13 +110,14 @@ void Controller::extractStopsFromLines(){
     }
 }
 
-void Controller::addEdgesInWalkingDistance(double walkingDistance) {
+void Controller::addEdgesInWalkingDistance() {
+    double walkingDistance = (double) maxWalingDistance / 1000;
     for (int i = 0; i < graph.getStops().size()-1; i++) {
         for (int j = i+1; j < graph.getStops().size(); j++) {
             double weight = haversine(graph.getStops()[i].getLatitude(), graph.getStops()[i].getLongitude(),
                                graph.getStops()[j].getLatitude(), graph.getStops()[j].getLongitude());
             if (!graph.getStops()[i].isInAdj(graph.getStops()[j]) && weight <= walkingDistance) {
-                graph.addEdge(i, j, weight, "walking");
+                graph.addEdge(i, j, weight * (3 + 2*(10-(double) walkingFactor)/10), "walking");
             }
             if (!graph.getStops()[j].isInAdj(graph.getStops()[i]) && weight <= walkingDistance) {
                 graph.addEdge(j, i, weight, "walking");
@@ -215,11 +215,11 @@ Stop Controller::getClosestStop(double lat1, double lon1) {
 }
 
 string Controller::getDirections(string origin, string destination, int type) {
-    vector<pair<int, string>> temp = graph.dijkstra_distance(graph.getStop(origin), graph.getStop(destination));
-    for (int i = 0;i<temp.size();i++){
-        cout << stopDB[temp[i].first].getCode() << " " << temp[i].second << endl;
-    }
-    vector<pair<int, string>> path = graph.dijkstra_distance(graph.getStop(origin), graph.getStop(destination));
+    vector<pair<int, string>> path;
+    if(type == 0)
+        path = graph.dijkstra_distance(graph.getStop(origin), graph.getStop(destination));
+    else if(type == 1)
+        path = graph.bfs(graph.getStop(origin), graph.getStop(destination));
     string line = path[1].second;
     string directions = "From " + stopDB[path[0].first].getName() + " by " + line + " to ";
     for (int i = 1; i < path.size(); ++i) {
@@ -278,7 +278,7 @@ void Controller::setMaxWalkDist(int maxWD) {
 }
 
 void Controller::setWalkingFac(int walkF) {
-    walkingFactor = (25-walkF)/10;
+    walkingFactor = walkF;
 }
 
 

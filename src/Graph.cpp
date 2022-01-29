@@ -117,6 +117,7 @@ vector<pair<int, std::string>> Graph::bfs(Stop& origin, Stop& dest) {
                 q.push(stops[w]);
                 stops[w].setVisited(true);
                 stops[w].setPred(u.getIndex());
+                stops[w].setPredLine(e.getLineCode());
             }
         }
     }
