@@ -73,8 +73,8 @@ System::System() {
                     break;
             }
             if (dmOption == 3) continue;
-            directionsMenu.setOption(directionsMenu.printOptionsMenu({"Show the quickest path", "Show the path with the least stops"/*, "Show the cheapest path (least amount of zones)"*/, "Go Back"}));
-            if(directionsMenu.getOption() == 2)
+            directionsMenu.setOption(directionsMenu.printOptionsMenu({"Show the quickest path", "Show the path with the least stops", "Show the cheapest path (least amount of zones)", "Go Back"}));
+            if(directionsMenu.getOption() == 3)
                 continue;
             directionsMenu.showDirections();
         }

@@ -220,6 +220,8 @@ string Controller::getDirections(string origin, string destination, int type) {
         path = graph.dijkstra_distance(graph.getStop(origin), graph.getStop(destination));
     else if(type == 1)
         path = graph.bfs(graph.getStop(origin), graph.getStop(destination));
+    else
+        path = graph.dijkstra_zones(graph.getStop(origin).getIndex(), graph.getStop(destination).getIndex());
     string line = path[1].second;
     string directions = "From " + stopDB[path[0].first].getName() + " by " + line + " to ";
     for (int i = 1; i < path.size(); ++i) {
