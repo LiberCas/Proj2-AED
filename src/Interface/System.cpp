@@ -57,7 +57,7 @@ System::System() {
                 if (dmOption == 4)
                     break;
             }
-            if (dmOption == 3) continue;
+            if (dmOption == 4) continue;
             directionsMenu.nowGetting('D');
             while (true) {
                 dmOption = directionsMenu.printOptionsMenu(directionsMenu.getMainOps(), "Destination:");
@@ -72,7 +72,7 @@ System::System() {
                 if (dmOption == 4)
                     break;
             }
-            if (dmOption == 3) continue;
+            if (dmOption == 4) continue;
             directionsMenu.setOption(directionsMenu.printOptionsMenu({"Show the quickest path", "Show the path with the least stops", "Show the cheapest path (least amount of zones)", "Go Back"}));
             if(directionsMenu.getOption() == 3)
                 continue;

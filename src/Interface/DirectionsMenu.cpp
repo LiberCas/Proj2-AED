@@ -96,12 +96,12 @@ void DirectionsMenu::showDirections() {
 
 bool DirectionsMenu::insertCoordinates() {
     string latitudeStr = anyInputMenu("Please insert the latitude, or type 'B' to go back");
-    while(!is_number(latitudeStr) && latitudeStr!="B")
+    while(!is_coord(latitudeStr) && latitudeStr!="B")
         latitudeStr = anyInputMenu("Please insert the latitude, or type 'B' to go back", "Invalid Input!");
     if(latitudeStr == "B")
         return false;
     string longitudeStr = anyInputMenu("Please insert the longitude, or type 'B' to go back");
-    while(!is_number(longitudeStr) && longitudeStr!="B")
+    while(!is_coord(longitudeStr) && longitudeStr!="B")
         longitudeStr = anyInputMenu("Please insert the longitude, or type 'B' to go back", "Invalid Input!");
     if(longitudeStr == "B")
         return false;

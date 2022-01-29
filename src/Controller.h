@@ -86,6 +86,8 @@ public:
     void addEdgesInWalkingDistance();
 
     vector<int> getStopsNearCoords(double longitude, double latitude, double distance);
+
+    void translateCoord(string &str);
 };
 
 #endif //PROJ1_CONTROLLER_H

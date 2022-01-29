@@ -215,6 +215,16 @@ Stop Controller::getClosestStop(double lat1, double lon1) {
 }
 
 string Controller::getDirections(string origin, string destination, int type) {
+    string directions = "";
+    bool addFooter = false;
+    if(origin.find(",") != string::npos){
+        translateCoord(origin);
+        directions+="Walk to nearest stop: " + graph.getStop(origin).getCode() + "\n";
+    }
+    if(destination.find(",") != string::npos){
+        translateCoord(destination);
+        addFooter = true;
+    }
     vector<pair<int, string>> path;
     if(type == 0)
         path = graph.dijkstra_distance(graph.getStop(origin), graph.getStop(destination));
@@ -223,17 +233,35 @@ string Controller::getDirections(string origin, string destination, int type) {
     else
         path = graph.dijkstra_zones(graph.getStop(origin).getIndex(), graph.getStop(destination).getIndex());
     string line = path[1].second;
-    string directions = "From " + stopDB[path[0].first].getName() + " by " + line + " to ";
+    directions += "From " + stopDB[path[0].first].getCode() + " by " + line + " to ";
     for (int i = 1; i < path.size(); ++i) {
         if(path[i].second!=line){
             line = path[i].second;
-            directions += stopDB[path[i-1].first].getName() + "\nFrom " + stopDB[path[i-1].first].getName() + " by " + path[i].second +" to ";
+            directions += stopDB[path[i-1].first].getCode() + "\nFrom " + stopDB[path[i-1].first].getCode() + " by " + path[i].second +" to ";
         }
     }
-    directions += graph.getStop(destination).getName();
+    directions += graph.getStop(destination).getCode();
+    if(addFooter)
+        directions+="Then walk to destination";
     return directions;
 }
 
+void Controller::translateCoord(string& str){
+    string lon = "";
+    string lat = "";
+    bool afterComma = false;
+    for (int i = 0; i < str.size(); ++i) {
+        if(str[i] == ','){
+            afterComma = true;
+            continue;
+        }
+        if(!afterComma)
+            lat += str[i];
+        else
+            lon += str[i];
+    }
+    str = getClosestStop(stod(lat), stod(lon)).getCode();
+}
 
 vector<Stop> &Controller::getStopDB() {
     return this->stopDB;
